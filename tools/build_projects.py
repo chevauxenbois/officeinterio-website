@@ -1,38 +1,53 @@
-import html
-OUT = '/home/claude/officeinterio-website/public/projects/'
+import html, os
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'public', 'projects') + os.sep
+os.makedirs(OUT, exist_ok=True)
 
 P = {
  'alfa': dict(
   name='Alfa', no='01', type='Workplace',
-  lede='Long, calm rows of desks under an even ceiling, a boardroom for the whole team and quiet cabins finished in oak.',
-  cover=('open-workspace', 'Open workspace'),
-  facts=[('Type', 'Workplace'), ('Spaces', 'Open workspace, boardroom, cabins, reception'), ('Scope', 'Workplace planning, interior design, 3D visuals'), ('Images', 'Design visuals')],
+  lede='A bright, open floor of red and yellow workstations in long rows, with a warm, timber-lined cafeteria for breaks.',
+  cover=('workstations', 'Open workspace'),
+  facts=[('Type', 'Workplace'), ('Spaces', 'Open workspace, cafeteria'), ('Scope', 'Planning, design and fit-out'), ('Images', 'Photographs of the finished space')],
   chapters=[
-   ('Open workspace', 'Desks run the full length of the floor in white, with soft green screens to give each person a little privacy.', [('workstations', 'Workstation rows', 'full')]),
-   ('Boardroom', 'One long table seats the whole team, with a screen at the head and frosted glass along one side.', [('boardroom', 'Boardroom', 'half'), ('boardroom-2', 'Boardroom from the screen end', 'half')]),
-   ('Cabins', 'Private cabins in oak panelling and warm white, each with a desk, a visitor chair and a pendant light.', [('cabin', 'Cabin', 'full'), ('cabin-2', 'Cabin, second view', 'half'), ('cabin-3', 'Cabin with glass front', 'half')]),
-   ('Reception', 'A marble-topped desk on an oak base, framed by black steel and glass.', [('reception', 'Reception', 'full')]),
+   ('Open workspace', 'Workstations run the length of the floor in clusters, with red and yellow screens that give every team its own patch of colour.',
+    [('open-workspace', 'Workstation rows', 'full'), ('workstations-3', 'Cluster workstations', 'half'), ('workstations-4', 'Desks beside the glass partition', 'half'), ('workstations-2', 'The full floor', 'full')]),
+   ('Cafeteria', 'A calm room for lunch and breaks, with timber slats, cane chairs and artwork on warm white walls.',
+    [('cafeteria', 'Cafeteria', 'full'), ('cafeteria-2', 'Cafeteria behind glass', 'half')]),
   ]),
  'gamma': dict(
   name='Gamma', no='02', type='Workplace',
-  lede='A soft reception lounge, glass-fronted meeting rooms, timber-arched booths for focused work and bright open desks.',
-  cover=('reception', 'Reception lounge'),
-  facts=[('Type', 'Workplace'), ('Spaces', 'Reception, meeting rooms, cabins, booths, open workspace'), ('Scope', 'Workplace planning, interior design, 3D visuals'), ('Images', 'Design visuals')],
+  lede='Deep blue and orange booths, glass-walled meeting rooms and long rows of light oak desks, all filled with daylight.',
+  cover=('booths', 'Booths'),
+  facts=[('Type', 'Workplace'), ('Spaces', 'Reception, open workspace, meeting rooms, cabins, booths'), ('Scope', 'Planning, design and fit-out'), ('Images', 'Photographs of the finished space')],
   chapters=[
-   ('Reception', 'A curved desk, a timber slat wall and a deep blue sofa set the tone at the door.', [('reception-2', 'Reception desk and lounge', 'full'), ('feature-wall', 'Lit feature wall', 'half')]),
-   ('Open workspace', 'Oak desks in long rows along the windows, broken up by planters so every desk can see green.', [('open-workspace', 'Open workspace', 'full'), ('open-workspace-2', 'Desks along the windows', 'full')]),
-   ('Meeting rooms and cabins', 'Frosted glass fronts keep meetings private. Cabins open to daylight with tan leather chairs.', [('meeting-room', 'Meeting room', 'half'), ('cabin', 'Cabin', 'half'), ('cabin-2', 'Cabin, second view', 'full')]),
-   ('Booths', 'Arched timber booths give small groups a quiet place to talk away from the desks.', [('booths', 'Timber-arched booths', 'full'), ('booths-2', 'Booths, wider view', 'full')]),
-   ('Washrooms', 'Stone-look tiles, a floating vanity and warm pendant lights.', [('washroom', 'Washroom vanity', 'full')]),
+   ('Arrival', 'A curved blue sofa and a slatted wall at reception, then a bright corridor lined with booths.',
+    [('reception', 'Reception', 'half'), ('booth-corridor', 'Booth corridor', 'half')]),
+   ('Open workspace', 'Rows of oak desks with soft screens, running along a wall of windows.',
+    [('open-workspace', 'Open workspace', 'full'), ('workstations', 'Workstations', 'half'), ('workstations-2', 'Desks beside the meeting rooms', 'half')]),
+   ('Meeting rooms and cabins', 'Black-framed glass keeps meeting rooms and cabins open to the light and connected to the floor.',
+    [('conference-room', 'Conference room', 'full'), ('meeting-rooms', 'Meeting rooms', 'half'), ('meeting-room', 'Meeting room', 'half'), ('cabins', 'Glass cabins', 'full')]),
+  ]),
+ 'marathon-futurex': dict(
+  name='Marathon Futurex', no='03', type='Workplace',
+  lede='Warm light, long timber desks and glass-fronted cabins under an open ceiling, with a quiet reception at the door.',
+  cover=('open-workspace', 'Open workspace'),
+  facts=[('Type', 'Workplace'), ('Spaces', 'Reception, open workspace, cabins, meeting room'), ('Scope', 'Planning, design and fit-out'), ('Images', 'Photographs of the finished space')],
+  chapters=[
+   ('Arrival', 'A glass entrance door opens onto a backlit reception desk in white and oak.',
+    [('entrance', 'Entrance', 'half'), ('reception', 'Reception', 'half')]),
+   ('Open workspace', 'Long benches of timber desks with low screens, lit by continuous linear lights.',
+    [('workstations', 'Workstations beside the cabins', 'full'), ('workstations-2', 'Open workspace', 'half'), ('workstations-3', 'Team corner', 'half')]),
+   ('Cabins and meeting room', 'Glass-fronted rooms with frosted bands, from a two-person cabin to a lounge room and a meeting room.',
+    [('cabin', 'Cabin', 'full'), ('glass-cabin', 'Glass cabin', 'half'), ('lounge-room', 'Lounge room', 'half'), ('cabin-seating', 'Cabin seating', 'half'), ('meeting-room', 'Meeting room', 'half')]),
   ]),
 }
-ORDER = ['alfa', 'gamma']
+ORDER = ['alfa', 'gamma', 'marathon-futurex']
 e = html.escape
 
 def shot(slug, key, cap, cls=''):
-    return (f'<figure class="shot {cls}"><button type="button" data-full="../images/projects/{slug}/{key}.jpg" data-cap="Design visual · {e(cap)}" aria-label="Enlarge: {e(cap)}">'
-            f'<img src="../images/projects/{slug}/{key}-sm.jpg" srcset="../images/projects/{slug}/{key}-sm.jpg 900w, ../images/projects/{slug}/{key}.jpg 2000w" sizes="(max-width: 960px) 100vw, 66vw" alt="{e(cap)}" loading="lazy"></button>'
-            f'<figcaption>Design visual · {e(cap)}</figcaption></figure>')
+    return (f'<figure class="shot {cls}"><button type="button" data-full="../images/projects/{slug}/{key}.jpg" data-cap="{e(cap)}" aria-label="Enlarge: {e(cap)}">'
+            f'<img src="../images/projects/{slug}/{key}-sm.jpg" srcset="../images/projects/{slug}/{key}-sm.jpg 1000w, ../images/projects/{slug}/{key}.jpg 2400w" sizes="(max-width: 960px) 100vw, 66vw" alt="{e(cap)}" loading="lazy"></button>'
+            f'<figcaption>{e(cap)}</figcaption></figure>')
 
 for i, slug in enumerate(ORDER):
     p = P[slug]; nxt = ORDER[(i + 1) % len(ORDER)]; n = P[nxt]
@@ -92,8 +107,6 @@ for i, slug in enumerate(ORDER):
   <div class="wrap">
     <dl class="facts-row">{facts}</dl>
 {chapters}
-
-    <p class="disclaim">All images on this page are design visuals, not photographs of the finished space.</p>
 
     <a class="next" href="{nxt}.html">
       <div class="row">

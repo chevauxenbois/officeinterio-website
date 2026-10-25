@@ -72,3 +72,4 @@ figure.shot figcaption{font-size:12px;line-height:16px;font-weight:500;letter-sp
   .lb .prev{left:auto;right:76px}
   .lb .cap{bottom:28px;left:var(--s2);right:140px}
 }
+@media (max-width:640px){.visit .wrap{grid-template-columns:1fr!important;justify-items:start}}
