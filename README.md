@@ -1,9 +1,18 @@
-# OfficeInterio website
+# Office Interio website
 
-Public website for OfficeInterio, a brand of Omnaad Studio (Pune).
+Public website for Office Interio, a brand of Omnaad Studio (Pune).
 
 - `public/` is everything that gets published. `public/index.html` is the whole site for now: Projects (completed work) and Catalogue (office furniture).
 - `public/images/` holds photos.
 - Hosting: Cloudflare Workers static assets (free), set up in `wrangler.jsonc`. Every change to `main` deploys automatically to https://officeinterio.harshkahateprojects.workers.dev.
 
 Content in [BRACKETS] or marked "Sample" / "Draft note" is placeholder and still needs real details.
+
+## Brand rules (from the Office Interio brand book, 2026)
+
+- Font: Jost only, 500 for headings, 400 for body.
+- Colours: Paper #F5F5F3, Bone #E3DDD1, Ink #111111 carry the page. One Oak #9A7249 accent per layout. Tobacco #6B4F32 for small accent labels. No text in Travertine, no Paper on Oak.
+- Square corners everywhere. Pills only for buttons. No drop shadows; lift cards with Bone.
+- Voice: we and you, sentence case, short sentences, real numbers, no exclamation marks. Never: world-class, state-of-the-art, cutting-edge, one-stop solution, dream office, synergy.
+- Photos: real, daylit, straight verticals, client-approved. Renders are labelled "Design visual".
+- Logo files in `public/images/brand/` were cut from the brand book PDF. Replace with the original SVG files when available.

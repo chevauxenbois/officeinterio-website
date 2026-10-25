@@ -3,162 +3,156 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="OfficeInterio, a brand of Omnaad Studio: office furniture and fit-out in Pune. Free layout and 3D visual, factory quotes, delivery and installation.">
-<title>OfficeInterio</title>
+<title>Office Interio · Spaces that work</title>
+<meta name="description" content="Office Interio designs and furnishes offices in Pune, from first sketch to handover. Workplace planning, layouts, furniture from partner factories and installation.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="images/brand/symbol-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap">
 <style>
-/* Layout: a drafting-sheet site. Plan-view drawings stand in for photos; sticky top bar switches Projects / Catalogue. */
+/* Office Interio brand book 2026: Jost only, Paper/Bone/Ink neutrals, one Oak accent per layout,
+   square corners, pills for buttons only, 8px spacing unit. Light only: the brand is daylit. */
 :root{
-  --paper:#f2f3ef; --sheet:#fbfbf8; --ink:#1d2a2c; --muted:#5d6a69; --line:#cfd4cd;
-  --accent:#b07a2a; --accent-ink:#ffffff; --grid:rgba(29,42,44,.06); --tag:#e6e9e2;
-  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
-  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --paper:#F5F5F3; --bone:#E3DDD1; --travertine:#9A958C; --stone:#605D58; --ink:#111111;
+  --oak:#9A7249; --tobacco:#6B4F32;
+  --font:"Jost",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s6:48px; --s8:64px; --s12:96px;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#141b1c; --sheet:#1b2425; --ink:#e7ebe6; --muted:#9aa7a5; --line:#33403f;
-  --accent:#d9a54f; --accent-ink:#1a1408; --grid:rgba(231,235,230,.05); --tag:#253031; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#141b1c; --sheet:#1b2425; --ink:#e7ebe6; --muted:#9aa7a5; --line:#33403f;
-  --accent:#d9a54f; --accent-ink:#1a1408; --grid:rgba(231,235,230,.05); --tag:#253031; color-scheme:dark}
-
 *{box-sizing:border-box}
-html{color-scheme:light}
-body{margin:0}
-img{max-width:100%}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/26px var(--font)}
+img{max-width:100%;display:block}
 [hidden]{display:none!important}
-body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body)}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--sheet)}
-.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
-.label{font:500 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.note{font:400 13px/1.5 var(--mono);color:var(--muted)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-weight:500;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(var(--s3),env(safe-area-inset-left,0px));padding-right:max(var(--s3),env(safe-area-inset-right,0px))}
 
-/* top bar */
-header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--sheet);border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
-.brand{display:flex;flex-direction:column;text-decoration:none}
-.brand b{font:800 22px/1 var(--display);font-stretch:118%;letter-spacing:-.01em}
-.brand b span{color:var(--accent)}
-.brand small{font:400 11px/1.4 var(--mono);color:var(--muted);letter-spacing:.04em}
-nav.tabs{display:flex;gap:4px;background:var(--tag);padding:4px;border-radius:999px}
-nav.tabs button{font:600 14px/1 var(--body);border:0;background:none;color:var(--ink);padding:10px 16px;border-radius:999px;cursor:pointer}
-nav.tabs button[aria-selected="true"]{background:var(--ink);color:var(--sheet)}
-.cta{font:600 14px/1 var(--body);background:var(--accent);color:var(--accent-ink);border:0;padding:12px 18px;border-radius:6px;cursor:pointer;text-decoration:none;display:inline-block}
+/* type scale */
+.display{font-size:64px;line-height:68px;letter-spacing:-.01em}
+.h1{font-size:48px;line-height:56px}
+.h2{font-size:36px;line-height:44px}
+.overline{font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tobacco)}
+.muted{color:var(--stone)}
+.hair{width:32px;height:2px;background:var(--oak);border:0;margin:0}
+
+/* buttons: the pill is for calls to action only */
+.pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 var(--s3);border-radius:999px;font:500 15px/1 var(--font);text-decoration:none;cursor:pointer;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper)}
+.pill.line{background:transparent;color:var(--ink)}
+.pill.light{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+
+/* header */
+header.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--bone);padding-top:env(safe-area-inset-top,0px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);min-height:80px}
+.logo{display:block;flex-shrink:0}
+.logo img{height:36px;width:auto}
+nav.tabs{display:flex;gap:var(--s4)}
+nav.tabs button{font:500 15px/1 var(--font);color:var(--stone);background:none;border:0;padding:var(--s1) 0;cursor:pointer;border-bottom:2px solid transparent}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
 
 /* hero */
-.hero{background:var(--sheet);border-bottom:1px solid var(--line);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;padding-block:56px 48px;align-items:center}
-.hero h1{font-size:clamp(38px,6vw,72px);font-weight:800;font-stretch:112%;letter-spacing:-.02em}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{max-width:52ch;color:var(--muted);font-size:18px;margin:20px 0 28px}
-.hero .actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.ghost{font:600 14px/1 var(--body);background:none;border:1px solid var(--ink);color:var(--ink);padding:11px 18px;border-radius:6px;cursor:pointer}
-.plan{border:1px solid var(--line);background:var(--sheet);border-radius:4px;padding:14px;min-width:0}
-.plan svg{width:100%;height:auto;display:block}
-.plan .note{display:flex;justify-content:space-between;margin-top:8px;gap:8px;flex-wrap:wrap}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--s8);padding-block:var(--s12) var(--s8);align-items:center}
+.hero .copy{display:flex;flex-direction:column;gap:var(--s3);min-width:0}
+.hero .lede{font-size:18px;line-height:28px;max-width:34em;color:var(--stone)}
+.hero .actions{display:flex;gap:var(--s2);flex-wrap:wrap;padding-top:var(--s1)}
+.channel{background:var(--bone);border-radius:160px 0 160px 0;padding:var(--s6) var(--s4) var(--s4);display:flex;flex-direction:column;gap:var(--s2);min-width:0}
+.channel svg{width:100%;height:auto;color:var(--ink)}
+.caption{font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
 
-/* draft banner */
-.draft{border:1px dashed var(--accent);border-radius:6px;padding:12px 14px;margin-top:28px;font:400 13px/1.5 var(--mono);color:var(--muted)}
-.draft b{color:var(--accent)}
+/* promise band */
+.promise{background:var(--ink);color:var(--paper)}
+.promise .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s6);padding-block:var(--s8)}
+.promise h3{font-size:22px;line-height:30px;margin-bottom:var(--s1)}
+.promise p{color:#d6d6d2}
 
-section.view{padding-block:48px 64px}
-.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
-.head h2{font-size:clamp(30px,4vw,44px);font-weight:750;font-stretch:108%}
-.head p{max-width:56ch;color:var(--muted);margin:10px 0 0}
+section.view{padding-block:var(--s12) var(--s8);scroll-margin-top:104px}
+#visit{scroll-margin-top:104px}
+.head{display:flex;flex-direction:column;gap:var(--s2);margin-bottom:var(--s6);max-width:40em}
 
-/* process strip */
-.process{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);border-radius:6px;background:var(--sheet);margin-bottom:40px;overflow:hidden}
-.process div{padding:16px 14px;border-left:1px solid var(--line);min-width:0}
-.process div:first-child{border-left:0}
-.process b{display:block;font:700 15px/1.2 var(--display);margin:6px 0 4px}
-.process span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
+/* process */
+.process{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-top:1px solid var(--ink);margin-bottom:var(--s8)}
+.process div{padding:var(--s3) var(--s2) 0 0;min-width:0}
+.process .n{font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;color:var(--stone)}
+.process b{display:block;font-weight:500;font-size:18px;line-height:26px;margin:var(--s1) 0 4px}
+.process span.t{font-size:14px;line-height:22px;color:var(--stone);display:block}
 
 /* projects */
-.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.proj{background:var(--sheet);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
-.proj .img{aspect-ratio:4/3;max-width:100%;border-bottom:1px solid var(--line);display:grid;place-items:center;background:var(--paper);position:relative}
-.proj .img svg{width:78%;height:auto}
-.proj .img .pill{position:absolute;top:10px;left:10px}
-.pill{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;background:var(--tag);color:var(--muted);padding:6px 8px;border-radius:4px}
-.pill.gold{background:var(--accent);color:var(--accent-ink)}
-.proj .body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
-.proj h3{font-size:21px;font-weight:700}
-.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border-top:1px solid var(--line);padding-top:12px;margin-top:auto}
-.specs div{min-width:0}
-.specs dt{font:500 10px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.specs dd{margin:3px 0 0;font:600 14px/1.3 var(--body);font-variant-numeric:tabular-nums}
-.scope{display:flex;flex-wrap:wrap;gap:6px}
-.proj p{margin:0;color:var(--muted);font-size:14px}
+.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
+.proj{display:flex;flex-direction:column;gap:var(--s2);min-width:0}
+.proj .img{aspect-ratio:4/5;max-width:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;position:relative}
+.proj .img svg{width:62%;height:auto;color:var(--ink)}
+.proj .img .caption{position:absolute;left:var(--s2);bottom:var(--s2)}
+.proj h3{font-size:22px;line-height:30px}
+.facts{display:flex;gap:var(--s3);font-size:14px;line-height:22px;color:var(--stone);flex-wrap:wrap}
+.note{margin-top:var(--s6);background:var(--bone);padding:var(--s3);font-size:14px;line-height:22px}
 
 /* catalogue */
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.chip{font:500 13px/1 var(--body);border:1px solid var(--line);background:var(--sheet);color:var(--ink);padding:9px 13px;border-radius:999px;cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
-.pkgrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:28px}
-.pkgrow select{font:500 14px var(--body);padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--sheet);color:var(--ink)}
-.cat{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.item{background:var(--sheet);border:1px solid var(--line);border-radius:6px;display:flex;flex-direction:column;overflow:hidden}
-.item .img{aspect-ratio:1/1;max-width:100%;display:grid;place-items:center;background:var(--paper);border-bottom:1px solid var(--line)}
-.item .img svg{width:62%;height:auto}
-.item .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
-.item h3{font-size:17px;font-weight:700;font-stretch:100%;line-height:1.2}
-.item .dim{font:400 12px/1.4 var(--mono);color:var(--muted)}
-.item .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:auto;padding-top:10px}
-.item .foot button{font:600 13px/1 var(--body);background:none;border:1px solid var(--line);color:var(--ink);padding:8px 10px;border-radius:5px;cursor:pointer}
-.item .foot button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.empty{grid-column:1/-1;padding:40px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:6px}
+.filters{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin-bottom:var(--s3);border-bottom:1px solid var(--bone)}
+.filters button{font:500 15px/1 var(--font);background:none;border:0;border-bottom:2px solid transparent;color:var(--stone);padding:var(--s2) 0;cursor:pointer}
+.filters button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.pkgrow{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;margin-bottom:var(--s6)}
+.pkgrow select{font:400 15px var(--font);padding:10px var(--s2);border:1px solid var(--travertine);border-radius:0;background:var(--paper);color:var(--ink);min-height:44px}
+.cat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4) var(--s3)}
+.item{display:flex;flex-direction:column;gap:var(--s1);min-width:0}
+.item .img{aspect-ratio:1/1;max-width:100%;background:var(--bone);display:grid;place-items:center;margin-bottom:var(--s1)}
+.item .img svg{width:56%;height:auto;color:var(--ink)}
+.item h3{font-size:17px;line-height:24px}
+.item .dim{font-size:14px;line-height:22px;color:var(--stone)}
+.item .foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s1);margin-top:auto;padding-top:var(--s1)}
+.item .foot span{font-size:13px;color:var(--stone)}
+.item .foot button{font:500 14px/1 var(--font);background:none;border:0;border-bottom:1px solid var(--ink);color:var(--ink);padding:6px 0;cursor:pointer;min-height:32px}
+.item .foot button[aria-pressed="true"]{border-bottom-width:2px}
+.empty{grid-column:1/-1;padding:var(--s6);text-align:center;color:var(--stone);background:var(--bone)}
+.packages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s8)}
+.packages div{background:var(--bone);padding:var(--s4) var(--s3);display:flex;flex-direction:column;gap:var(--s1);min-width:0}
+.packages h3{font-size:24px;line-height:32px}
+.packages p{font-size:15px;line-height:24px;color:var(--stone)}
 
-/* packages */
-.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:6px;background:var(--sheet);margin-top:48px;overflow:hidden}
-.packages div{padding:22px;border-left:1px solid var(--line);min-width:0}
-.packages div:first-child{border-left:0}
-.packages h3{font-size:22px;font-weight:750;margin:6px 0 8px}
-.packages p{margin:0;font-size:14px;color:var(--muted)}
-
-/* enquiry */
-.enquire{background:var(--ink);color:var(--sheet)}
-.enquire .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;padding-block:56px}
-.enquire h2{font-size:clamp(28px,4vw,40px);font-weight:750;font-stretch:108%}
-.enquire p{opacity:.8;max-width:44ch}
-.enquire .label{color:inherit;opacity:.7}
-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;min-width:0}
-form label{display:flex;flex-direction:column;gap:6px;font:500 12px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;min-width:0}
-form input,form select,form textarea{font:400 15px var(--body);padding:11px 12px;border-radius:5px;border:1px solid transparent;background:var(--sheet);color:var(--ink);width:100%}
+/* site visit */
+.visit{background:var(--ink);color:var(--paper)}
+.visit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s8);padding-block:var(--s12)}
+.visit .copy{display:flex;flex-direction:column;gap:var(--s3);min-width:0}
+.visit .overline{color:var(--bone)}
+.visit p{color:#d6d6d2;max-width:30em}
+.basket{font-size:14px;line-height:22px}
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3) var(--s2);min-width:0}
+form label{display:flex;flex-direction:column;gap:var(--s1);font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;min-width:0}
+form input,form select,form textarea{font:400 16px/24px var(--font);padding:11px var(--s2);border-radius:0;border:1px solid var(--paper);background:var(--paper);color:var(--ink);width:100%;min-height:48px}
 form .full{grid-column:1/-1}
-form .cta{justify-self:start}
-#sent{grid-column:1/-1;font:400 14px/1.5 var(--body);opacity:.9}
-.basket{font:400 13px/1.5 var(--mono);opacity:.85}
+form .pill{justify-self:start}
+#sent{grid-column:1/-1;color:var(--paper)}
 
-footer{padding-block:28px;border-top:1px solid var(--line)}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer{padding-block:var(--s6);border-top:1px solid var(--bone)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);flex-wrap:wrap;font-size:14px;color:var(--stone)}
+footer img{height:28px;width:auto}
 
 @media (max-width:960px){
-  .hero .wrap,.enquire .wrap{grid-template-columns:1fr}
-  .projects{grid-template-columns:repeat(2,1fr)}
-  .cat{grid-template-columns:repeat(3,1fr)}
-  .process{grid-template-columns:repeat(3,1fr)}
-  .process div:nth-child(4){border-left:0}
-  .process div:nth-child(n+4){border-top:1px solid var(--line)}
+  .hero .wrap,.visit .wrap{grid-template-columns:1fr;gap:var(--s6)}
+  .hero .wrap{padding-block:var(--s8) var(--s6)}
+  .display{font-size:48px;line-height:56px}
+  .projects{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cat{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .process{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:var(--s3)}
+  .promise .wrap{grid-template-columns:1fr;gap:var(--s4)}
+  .bar .pill{display:none}
 }
 @media (max-width:640px){
+  .wrap{padding-left:max(var(--s2),env(safe-area-inset-left,0px));padding-right:max(var(--s2),env(safe-area-inset-right,0px))}
+  .bar .wrap{min-height:0;flex-wrap:wrap;row-gap:0;padding-top:var(--s2)}
+  .logo img{height:28px}
+  nav.tabs{width:100%;gap:var(--s3)}
+  nav.tabs button{padding:var(--s2) 0 10px}
+  .display{font-size:40px;line-height:46px}
+  .h2{font-size:30px;line-height:38px}
   .projects,.packages{grid-template-columns:1fr}
-  .packages div{border-left:0;border-top:1px solid var(--line)}
-  .packages div:first-child{border-top:0}
-  .cat{grid-template-columns:repeat(2,1fr);gap:12px}
-  .process{grid-template-columns:1fr 1fr}
-  .process div{border-left:0!important;border-top:1px solid var(--line)}
-  .process div:nth-child(even){border-left:1px solid var(--line)!important}
-  .process div:nth-child(-n+2){border-top:0}
+  .cat{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3) var(--s2)}
+  .process{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .channel{border-radius:96px 0 96px 0;padding:var(--s4) var(--s2) var(--s3)}
   form{grid-template-columns:1fr}
-  .bar .cta{display:none}
-}
-@media (prefers-reduced-motion:no-preference){
-  .proj,.item{transition:transform .2s ease,border-color .2s ease}
-  .proj:hover,.item:hover{transform:translateY(-2px);border-color:var(--muted)}
+  section.view{padding-block:var(--s8) var(--s6)}
 }
 </style>
 </head>
@@ -166,33 +160,39 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <header class="bar">
   <div class="wrap">
-    <a class="brand" href="#projects" aria-label="OfficeInterio home">
-      <b>Office<span>Interio</span></b>
-      <small>a brand of Omnaad Studio · Pune</small>
-    </a>
+    <a class="logo" href="#projects" aria-label="Office Interio home"><img src="images/brand/logo-horizontal-ink.png" alt="Office Interio" width="636" height="85"></a>
     <nav class="tabs" role="tablist" aria-label="Site sections">
       <button role="tab" id="tab-projects" data-view="projects" aria-selected="true">Projects</button>
       <button role="tab" id="tab-catalogue" data-view="catalogue" aria-selected="false">Catalogue</button>
     </nav>
-    <a class="cta" href="#enquire">Get a free layout</a>
+    <a class="pill" href="#visit">Book a site visit</a>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <div>
-      <div class="label">Office furniture &amp; fit-out · Hinjewadi · Kharadi · Magarpatta</div>
-      <h1 style="margin-top:14px">Your new office, <em>furnished</em> from floor plan to handover.</h1>
-      <p>Send us your floor plan and seat count. We draw the layout, show it in 3D, compare quotes from partner factories, and coordinate delivery and installation. One point of contact from start to finish.</p>
+    <div class="copy">
+      <span class="overline">Office interiors · Pune</span>
+      <hr class="hair">
+      <h1 class="display">Spaces that work.</h1>
+      <p class="lede">We design and furnish offices, from first sketch to handover. You get a layout for your floor, a 3D view before you order, quotes from our partner factories, and one team that sees installation through.</p>
       <div class="actions">
-        <a class="cta" href="#enquire">Get a free layout</a>
-        <button class="ghost" type="button" data-go="catalogue">Browse the catalogue</button>
+        <a class="pill" href="#visit">Book a site visit</a>
+        <button class="pill line" type="button" data-go="catalogue">Browse the catalogue</button>
       </div>
     </div>
-    <figure class="plan" style="margin:0" aria-label="Sample 50-seat floor layout drawing">
-      <svg viewBox="0 0 400 260" fill="none" stroke="currentColor" stroke-width="1.4" id="heroPlan"></svg>
-      <figcaption class="note"><span>SAMPLE LAYOUT · 50 SEATS</span><span>approx. 4,000 sq ft · not to scale</span></figcaption>
+    <figure class="channel" style="margin:0">
+      <svg viewBox="0 0 400 260" fill="none" stroke="currentColor" stroke-width="1.4" id="heroPlan" role="img" aria-label="Layout drawing of a 50-seat office"></svg>
+      <figcaption class="caption">Design visual · 50-seat layout</figcaption>
     </figure>
+  </div>
+</div>
+
+<div class="promise">
+  <div class="wrap">
+    <div><h3>Planned around your team</h3><p>We start with how your people work, then place desks, cabins and meeting rooms to suit.</p></div>
+    <div><h3>Seen before it's ordered</h3><p>You see your floor furnished in 3D, so there are no surprises on site.</p></div>
+    <div><h3>One team to handover</h3><p>Quotes, delivery, installation and the snag list, handled by one point of contact.</p></div>
   </div>
 </div>
 
@@ -200,39 +200,35 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <section class="view" id="view-projects" role="tabpanel" aria-labelledby="tab-projects">
     <div class="wrap">
       <div class="head">
-        <div>
-          <div class="label">Section 1</div>
-          <h2>Completed projects</h2>
-          <p>Each project below was handled end to end: brief, layout, 3D visual, factory quote, installation and handover.</p>
-        </div>
+        <span class="overline">Selected projects</span>
+        <h2 class="h2">Offices we have delivered</h2>
+        <p class="muted">Every project runs the same six steps, from the first conversation to the keys.</p>
       </div>
 
       <div class="process" aria-label="How every project runs">
-        <div><span class="label">Step 1</span><b>Brief</b><span>Seat count, move-in date, budget range</span></div>
-        <div><span class="label">Step 2</span><b>Layout</b><span>Floor plan zoned for teams, cabins and meetings</span></div>
-        <div><span class="label">Step 3</span><b>3D visual</b><span>See the furnished office before you order</span></div>
-        <div><span class="label">Step 4</span><b>Quotes</b><span>Compare partner factories side by side</span></div>
-        <div><span class="label">Step 5</span><b>Install</b><span>Delivery and installation coordinated by us</span></div>
-        <div><span class="label">Step 6</span><b>Handover</b><span>Snag list closed, warranty explained</span></div>
+        <div><span class="n">01</span><b>Brief</b><span class="t">Seats, move-in date and budget</span></div>
+        <div><span class="n">02</span><b>Layout</b><span class="t">Teams, cabins and meeting rooms placed</span></div>
+        <div><span class="n">03</span><b>3D view</b><span class="t">Your floor, furnished, before you order</span></div>
+        <div><span class="n">04</span><b>Quotes</b><span class="t">Partner factories compared side by side</span></div>
+        <div><span class="n">05</span><b>Install</b><span class="t">Delivery and fitting, coordinated by us</span></div>
+        <div><span class="n">06</span><b>Handover</b><span class="t">Snag list closed, warranty explained</span></div>
       </div>
 
       <div class="projects" id="projectGrid"></div>
-      <div class="draft"><b>Draft note:</b> these three cards are placeholders. Replace each with a real Omnaad Studio project: name or client type, location, seats, area, scope, and before/after photos.</div>
+      <p class="note">Project photographs are on their way. Each project will show the finished space, the brief and the numbers: seats, area and weeks on site.</p>
     </div>
   </section>
 
   <section class="view" id="view-catalogue" role="tabpanel" aria-labelledby="tab-catalogue" hidden>
     <div class="wrap">
       <div class="head">
-        <div>
-          <div class="label">Section 2</div>
-          <h2>Furniture catalogue</h2>
-          <p>Workstations, seating, cabins, storage and more from our partner factories. Add items to your enquiry and we'll send quotes for your seat count.</p>
-        </div>
+        <span class="overline">Furniture catalogue</span>
+        <h2 class="h2">Furniture for every part of the floor</h2>
+        <p class="muted">Workstations, seating, cabins and storage from our partner factories. Add what you need and we'll quote for your seat count.</p>
       </div>
       <div class="filters" id="filters" role="group" aria-label="Filter by category"></div>
       <div class="pkgrow">
-        <label class="label" for="pkg">Show items for package</label>
+        <label class="overline" for="pkg" style="color:var(--ink)">Package</label>
         <select id="pkg">
           <option value="all">All packages</option>
           <option value="Starter">Starter</option>
@@ -241,47 +237,48 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         </select>
       </div>
       <div class="cat" id="catGrid"></div>
-      <div class="draft"><b>Draft note:</b> items, sizes and finishes are typical examples. Real products, photos and specs will come from signed partner factories. Prices stay "on request" because the factory quotes each order.</div>
+      <p class="note">Sizes shown are typical. Final specifications, finishes and prices come from the partner factory for your order.</p>
 
       <div class="packages">
-        <div><span class="label">10 to 25 seats</span><h3>Starter</h3><p>Basic workstations, task chairs, one meeting table and basic storage. For tight budgets and quick moves.</p></div>
-        <div><span class="label">25 to 75 seats</span><h3>Professional</h3><p>Better workstations, ergonomic chairs, cabin and meeting furniture, and a reception desk.</p></div>
-        <div><span class="label">50+ seats</span><h3>Executive</h3><p>Premium finishes, executive cabins, branded reception and lounge zones for brand-led offices.</p></div>
+        <div><span class="overline">10 to 25 seats</span><h3>Starter</h3><p>Workstations, task chairs, one meeting table and storage. For quick moves on a tight budget.</p></div>
+        <div><span class="overline">25 to 75 seats</span><h3>Professional</h3><p>Better workstations, ergonomic chairs, cabins, meeting rooms and a reception desk.</p></div>
+        <div><span class="overline">50 seats and up</span><h3>Executive</h3><p>Premium finishes, executive cabins, a branded reception and lounge areas.</p></div>
       </div>
     </div>
   </section>
 </main>
 
-<section class="enquire" id="enquire">
+<section class="visit" id="visit">
   <div class="wrap">
-    <div>
-      <div class="label">No cost to you</div>
-      <h2 style="margin-top:12px">Get a free layout and 3D visual</h2>
-      <p>Share your seat count and timeline. We'll send a layout and quotes from our partner factories. Brokers and building managers are welcome to refer tenants.</p>
+    <div class="copy">
+      <span class="overline">Book a site visit</span>
+      <h2 class="h2">We'll walk the space with you.</h2>
+      <p>Tell us your seat count and move-in date. After the visit we send a layout, a 3D view and factory quotes, at no cost to you.</p>
+      <p>Brokers and building managers are welcome to refer tenants.</p>
       <p class="basket" id="basket">No catalogue items added yet.</p>
     </div>
     <form id="form" novalidate>
       <label>Name<input id="f-name" required autocomplete="name"></label>
       <label>Company<input id="f-co" autocomplete="organization"></label>
       <label>Phone or email<input id="f-contact" required></label>
-      <label>I am a
-        <select id="f-role"><option>Tenant / company</option><option>Broker</option><option>Building or facility manager</option><option>Co-working operator</option></select>
+      <label>You are a
+        <select id="f-role"><option>Tenant or company</option><option>Broker</option><option>Building or facility manager</option><option>Co-working operator</option></select>
       </label>
-      <label>Seats<input id="f-seats" inputmode="numeric" placeholder="e.g. 50"></label>
+      <label>Seats<input id="f-seats" inputmode="numeric" placeholder="50"></label>
       <label>Location
-        <select id="f-loc"><option>Hinjewadi</option><option>Kharadi</option><option>Magarpatta / Hadapsar</option><option>Other, Pune</option></select>
+        <select id="f-loc"><option>Hinjewadi</option><option>Kharadi</option><option>Magarpatta or Hadapsar</option><option>Elsewhere in Pune</option></select>
       </label>
       <label class="full">Move-in date and notes<textarea id="f-notes" rows="3"></textarea></label>
-      <button class="cta" type="submit">Request my layout</button>
+      <button class="pill light" type="submit">Book a site visit</button>
       <p id="sent" hidden></p>
     </form>
   </div>
 </section>
 
 <footer>
-  <div class="wrap note">
-    <span>OfficeInterio · a brand of Omnaad Studio · Pune</span>
-    <span>Contact details to be added</span>
+  <div class="wrap">
+    <img src="images/brand/logo-horizontal-ink.png" alt="Office Interio" width="636" height="85">
+    <span>Office interiors in Pune · a brand of Omnaad Studio</span>
   </div>
 </footer>
 
@@ -299,7 +296,7 @@ const D = {
   pod:'<rect x="20" y="16" width="60" height="68" rx="6"/><line x1="20" y1="70" x2="80" y2="70"/><rect x="34" y="28" width="32" height="14"/><circle cx="50" cy="56" r="7"/>',
   pantry:'<rect x="12" y="24" width="76" height="20"/><circle cx="26" cy="34" r="5"/><rect x="58" y="28" width="22" height="12"/><circle cx="34" cy="70" r="12"/><circle cx="34" cy="70" r="3"/><circle cx="70" cy="70" r="12"/><circle cx="70" cy="70" r="3"/>'
 };
-const svg = (k, w=100) => `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">${D[k]}</svg>`;
+const svg = k => `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">${D[k]}</svg>`;
 
 // Hero floor plan
 (function(){
@@ -309,52 +306,47 @@ const svg = (k, w=100) => `<svg viewBox="0 0 100 100" fill="none" stroke="curren
   s+='<rect x="314" y="26" width="58" height="40" rx="18"/><circle cx="306" cy="46" r="5"/><circle cx="380" cy="46" r="5"/><circle cx="330" cy="18" r="5"/><circle cx="356" cy="18" r="5"/><circle cx="330" cy="74" r="5"/><circle cx="356" cy="74" r="5"/>';
   s+='<path d="M24 200 h50 v20 h-20 v18 h-30z"/><circle cx="96" cy="210" r="5"/>';
   s+='<path d="M250 240 Q300 196 350 240" /><circle cx="300" cy="232" r="5"/>';
-  s+='<g font-family="IBM Plex Mono, monospace" font-size="9" fill="currentColor" stroke="none" opacity=".7"><text x="24" y="186">OPEN WORKSTATIONS · 48</text><text x="300" y="104">MEETING · 6</text><text x="24" y="250">CABIN</text><text x="270" y="252">RECEPTION</text></g>';
-  const el=document.getElementById('heroPlan'); el.innerHTML=s; el.style.color='var(--ink)';
-  el.querySelectorAll('rect,circle,path,line').forEach(n=>{if(n.closest('g'))return; n.setAttribute('stroke','currentColor')});
+  s+='<g font-family="Jost, sans-serif" font-size="9" letter-spacing="1" fill="currentColor" stroke="none"><text x="134" y="194">OPEN WORKSTATIONS · 48</text><text x="300" y="106">MEETING · 6</text><text x="24" y="250">CABIN</text><text x="266" y="252">RECEPTION</text></g>';
+  document.getElementById('heroPlan').innerHTML=s;
 })();
 
-// Projects (placeholders to replace with real work)
+// Projects: placeholders until real, client-approved photographs arrive
 const projects = [
-  {title:'Project name to add', tag:'IT services office', loc:'Location, Pune', seats:'—', area:'— sq ft', time:'— weeks', scope:['Layout','3D','Workstations','Cabins','Installation'], icon:'workstation', note:'Add a two-line story: the brief, what we delivered, and the result.'},
-  {title:'Project name to add', tag:'Startup office', loc:'Location, Pune', seats:'—', area:'— sq ft', time:'— weeks', scope:['Layout','3D','Seating','Meeting rooms'], icon:'meeting', note:'Add before and after photos here once available.'},
-  {title:'Project name to add', tag:'Leasing consulting', loc:'Location, Pune', seats:'—', area:'— sq ft', time:'— weeks', scope:['Space planning','Fit-out advice'], icon:'cabin', note:'Past consulting for a leasing company can go here, with their permission.'}
+  {type:'Workplace', icon:'workstation'},
+  {type:'Startup office', icon:'meeting'},
+  {type:'Workplace planning', icon:'cabin'}
 ];
 document.getElementById('projectGrid').innerHTML = projects.map((p,i)=>`
   <article class="proj">
-    <div class="img">${svg(p.icon)}<span class="pill gold">Sample ${i+1}</span></div>
-    <div class="body">
-      <span class="label">${p.tag} · ${p.loc}</span>
-      <h3>${p.title}</h3>
-      <p>${p.note}</p>
-      <div class="scope">${p.scope.map(s=>`<span class="pill">${s}</span>`).join('')}</div>
-      <dl class="specs"><div><dt>Seats</dt><dd>${p.seats}</dd></div><div><dt>Area</dt><dd>${p.area}</dd></div><div><dt>Timeline</dt><dd>${p.time}</dd></div></dl>
-    </div>
+    <div class="img">${svg(p.icon)}<span class="caption">Photograph to come</span></div>
+    <span class="overline">Project · 0${i+1} · ${p.type}</span>
+    <h3>Project name to come</h3>
+    <div class="facts"><span>Seats</span><span>Sq ft</span><span>Weeks on site</span></div>
   </article>`).join('');
 
-// Catalogue (typical example items; real specs come from partner factories)
+// Catalogue: typical items; real specifications come from partner factories
 const items = [
-  {n:'Linear workstation, 4-seater', c:'Workstations', d:'Typical 1200 × 600 mm per seat', p:['Starter','Professional'], i:'workstation'},
-  {n:'Premium workstation with privacy screens', c:'Workstations', d:'Typical 1400 × 700 mm per seat', p:['Professional','Executive'], i:'workstation'},
+  {n:'Linear workstation, 4 seats', c:'Workstations', d:'Typically 1200 × 600 mm per seat', p:['Starter','Professional'], i:'workstation'},
+  {n:'Workstation with privacy screens', c:'Workstations', d:'Typically 1400 × 700 mm per seat', p:['Professional','Executive'], i:'workstation'},
   {n:'Task chair', c:'Seating', d:'Mesh back, fixed arms', p:['Starter'], i:'chair'},
   {n:'Ergonomic chair', c:'Seating', d:'Adjustable lumbar, arms and seat depth', p:['Professional','Executive'], i:'chair'},
-  {n:'Meeting table, 6-seater', c:'Meeting', d:'Typical 1800 × 900 mm', p:['Starter','Professional'], i:'meeting'},
-  {n:'Boardroom table, 10–12 seater', c:'Meeting', d:'Typical 3600 × 1200 mm', p:['Executive'], i:'meeting'},
-  {n:'Manager cabin desk with side return', c:'Cabins', d:'Typical 1500 × 750 mm + return', p:['Professional'], i:'cabin'},
+  {n:'Meeting table, 6 seats', c:'Meeting', d:'Typically 1800 × 900 mm', p:['Starter','Professional'], i:'meeting'},
+  {n:'Boardroom table, 10 to 12 seats', c:'Meeting', d:'Typically 3600 × 1200 mm', p:['Executive'], i:'meeting'},
+  {n:'Manager desk with side return', c:'Cabins', d:'Typically 1500 × 750 mm with return', p:['Professional'], i:'cabin'},
   {n:'Executive cabin set', c:'Cabins', d:'Desk, credenza and visitor chairs', p:['Executive'], i:'cabin'},
   {n:'Pedestal and low storage', c:'Storage', d:'Lockable, 3 drawers', p:['Starter','Professional','Executive'], i:'storage'},
-  {n:'Reception desk', c:'Reception', d:'Straight or curved, branded panel option', p:['Professional','Executive'], i:'reception'},
-  {n:'Lounge sofa and coffee table', c:'Lounge', d:'2 or 3 seater', p:['Executive'], i:'lounge'},
-  {n:'Phone booth / focus pod', c:'Lounge', d:'Single person', p:['Executive'], i:'pod'},
-  {n:'Acoustic wall panels', c:'Acoustics', d:'Fabric-wrapped, choice of colours', p:['Professional','Executive'], i:'acoustic'},
+  {n:'Reception desk', c:'Reception', d:'Straight or curved, with a logo panel', p:['Professional','Executive'], i:'reception'},
+  {n:'Lounge sofa and coffee table', c:'Lounge', d:'2 or 3 seats', p:['Executive'], i:'lounge'},
+  {n:'Phone booth', c:'Lounge', d:'For one person', p:['Executive'], i:'pod'},
+  {n:'Acoustic wall panels', c:'Acoustics', d:'Fabric-wrapped, in a range of colours', p:['Professional','Executive'], i:'acoustic'},
   {n:'Pantry tables and stools', c:'Pantry', d:'Café-height sets', p:['Starter','Professional','Executive'], i:'pantry'}
 ];
 const cats = ['All', ...new Set(items.map(x=>x.c))];
 let cat = 'All', pkg = 'all';
 const picked = new Set();
 const filtersEl = document.getElementById('filters');
-filtersEl.innerHTML = cats.map(c=>`<button class="chip" type="button" data-cat="${c}" aria-pressed="${c==='All'}">${c}</button>`).join('');
-filtersEl.addEventListener('click', e=>{const b=e.target.closest('[data-cat]'); if(!b) return; cat=b.dataset.cat; filtersEl.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed', x===b)); renderCat();});
+filtersEl.innerHTML = cats.map(c=>`<button type="button" data-cat="${c}" aria-pressed="${c==='All'}">${c}</button>`).join('');
+filtersEl.addEventListener('click', e=>{const b=e.target.closest('[data-cat]'); if(!b) return; cat=b.dataset.cat; filtersEl.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed', x===b)); renderCat();});
 document.getElementById('pkg').addEventListener('change', e=>{pkg=e.target.value; renderCat();});
 
 function renderCat(){
@@ -362,14 +354,12 @@ function renderCat(){
   document.getElementById('catGrid').innerHTML = list.length ? list.map(x=>`
     <article class="item">
       <div class="img">${svg(x.i)}</div>
-      <div class="body">
-        <span class="label">${x.c}</span>
-        <h3>${x.n}</h3>
-        <span class="dim">${x.d}</span>
-        <div class="scope">${x.p.map(p=>`<span class="pill">${p}</span>`).join('')}</div>
-        <div class="foot"><span class="note">Price on request</span><button type="button" data-add="${x.idx}" aria-pressed="${picked.has(x.idx)}">${picked.has(x.idx)?'Added':'Add to enquiry'}</button></div>
-      </div>
-    </article>`).join('') : '<div class="empty">No items in this category for that package. Try another filter.</div>';
+      <span class="overline">${x.c}</span>
+      <h3>${x.n}</h3>
+      <span class="dim">${x.d}</span>
+      <span class="dim">${x.p.join(' · ')}</span>
+      <div class="foot"><span>Price on request</span><button type="button" data-add="${x.idx}" aria-pressed="${picked.has(x.idx)}">${picked.has(x.idx)?'Added':'Add to enquiry'}</button></div>
+    </article>`).join('') : '<div class="empty">Nothing in this category for that package. Try another filter.</div>';
 }
 document.getElementById('catGrid').addEventListener('click', e=>{
   const b=e.target.closest('[data-add]'); if(!b) return;
@@ -377,8 +367,7 @@ document.getElementById('catGrid').addEventListener('click', e=>{
   renderCat(); renderBasket();
 });
 function renderBasket(){
-  const el=document.getElementById('basket');
-  el.textContent = picked.size ? `In your enquiry: ${[...picked].map(i=>items[i].n).join(', ')}.` : 'No catalogue items added yet.';
+  document.getElementById('basket').textContent = picked.size ? `In your enquiry: ${[...picked].map(i=>items[i].n).join(', ')}.` : 'No catalogue items added yet.';
 }
 renderCat();
 
@@ -396,13 +385,13 @@ document.querySelectorAll('[data-view],[data-go]').forEach(b=>b.addEventListener
 }));
 show((location.hash||'').slice(1));
 
-// Enquiry form (preview only: nothing is sent yet)
+// Enquiry form: not connected to email yet
 document.getElementById('form').addEventListener('submit', e=>{
   e.preventDefault();
   const name=document.getElementById('f-name').value.trim(), contact=document.getElementById('f-contact').value.trim();
   const out=document.getElementById('sent'); out.hidden=false;
   out.textContent = (!name||!contact) ? 'Please add your name and a phone number or email so we can reply.'
-    : `Thanks, ${name}. This is a preview of the site, so the form isn't connected yet. On the live site this would reach the OfficeInterio team.`;
+    : `Thank you, ${name}. We will be in touch within a working day once online booking opens. It is not connected yet.`;
 });
 </script>
 </body>
