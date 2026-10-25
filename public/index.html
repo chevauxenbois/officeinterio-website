@@ -182,20 +182,20 @@ document.getElementById('projectGrid').innerHTML = projects.map((p,i)=>`
 
 // Catalogue: typical items; real specifications come from partner factories
 const items = [
-  {n:'Linear workstation, 4 seats', c:'Workstations', d:'Typically 1200 × 600 mm per seat', p:['Starter','Professional'], i:'workstation'},
-  {n:'Workstation with privacy screens', c:'Workstations', d:'Typically 1400 × 700 mm per seat', p:['Professional','Executive'], i:'workstation'},
-  {n:'Task chair', c:'Seating', d:'Mesh back, fixed arms', p:['Starter'], i:'chair'},
-  {n:'Ergonomic chair', c:'Seating', d:'Adjustable lumbar, arms and seat depth', p:['Professional','Executive'], i:'chair'},
-  {n:'Meeting table, 6 seats', c:'Meeting', d:'Typically 1800 × 900 mm', p:['Starter','Professional'], i:'meeting'},
-  {n:'Boardroom table, 10 to 12 seats', c:'Meeting', d:'Typically 3600 × 1200 mm', p:['Executive'], i:'meeting'},
-  {n:'Manager desk with side return', c:'Cabins', d:'Typically 1500 × 750 mm with return', p:['Professional'], i:'cabin'},
-  {n:'Executive cabin set', c:'Cabins', d:'Desk, credenza and visitor chairs', p:['Executive'], i:'cabin'},
-  {n:'Pedestal and low storage', c:'Storage', d:'Lockable, 3 drawers', p:['Starter','Professional','Executive'], i:'storage'},
-  {n:'Reception desk', c:'Reception', d:'Straight or curved, with a logo panel', p:['Professional','Executive'], i:'reception'},
-  {n:'Lounge sofa and coffee table', c:'Lounge', d:'2 or 3 seats', p:['Executive'], i:'lounge'},
-  {n:'Phone booth', c:'Lounge', d:'For one person', p:['Executive'], i:'pod'},
-  {n:'Acoustic wall panels', c:'Acoustics', d:'Fabric-wrapped, in a range of colours', p:['Professional','Executive'], i:'acoustic'},
-  {n:'Pantry tables and stools', c:'Pantry', d:'Café-height sets', p:['Starter','Professional','Executive'], i:'pantry'}
+  {s:'linear-workstation', n:'Linear workstation, 4 seats', c:'Workstations', d:'Typically 1200 × 600 mm per seat', p:['Starter','Professional'], i:'workstation'},
+  {s:'workstation-with-screens', n:'Workstation with privacy screens', c:'Workstations', d:'Typically 1400 × 700 mm per seat', p:['Professional','Executive'], i:'workstation'},
+  {s:'task-chair', n:'Task chair', c:'Seating', d:'Mesh back, fixed arms', p:['Starter'], i:'chair'},
+  {s:'ergonomic-chair', n:'Ergonomic chair', c:'Seating', d:'Adjustable lumbar, arms and seat depth', p:['Professional','Executive'], i:'chair'},
+  {s:'meeting-table', n:'Meeting table, 6 seats', c:'Meeting', d:'Typically 1800 × 900 mm', p:['Starter','Professional'], i:'meeting'},
+  {s:'boardroom-table', n:'Boardroom table, 10 to 12 seats', c:'Meeting', d:'Typically 3600 × 1200 mm', p:['Executive'], i:'meeting'},
+  {s:'manager-desk', n:'Manager desk with side return', c:'Cabins', d:'Typically 1500 × 750 mm with return', p:['Professional'], i:'cabin'},
+  {s:'executive-cabin', n:'Executive cabin set', c:'Cabins', d:'Desk, credenza and visitor chairs', p:['Executive'], i:'cabin'},
+  {s:'pedestal-storage', n:'Pedestal and low storage', c:'Storage', d:'Lockable, 3 drawers', p:['Starter','Professional','Executive'], i:'storage'},
+  {s:'reception-desk', n:'Reception desk', c:'Reception', d:'Straight or curved, with a logo panel', p:['Professional','Executive'], i:'reception'},
+  {s:'lounge-set', n:'Lounge sofa and coffee table', c:'Lounge', d:'2 or 3 seats', p:['Executive'], i:'lounge'},
+  {s:'phone-booth', n:'Phone booth', c:'Lounge', d:'For one person', p:['Executive'], i:'pod'},
+  {s:'acoustic-panels', n:'Acoustic wall panels', c:'Acoustics', d:'Fabric-wrapped, in a range of colours', p:['Professional','Executive'], i:'acoustic'},
+  {s:'pantry-set', n:'Pantry tables and stools', c:'Pantry', d:'Café-height sets', p:['Starter','Professional','Executive'], i:'pantry'}
 ];
 const cats = ['All', ...new Set(items.map(x=>x.c))];
 let cat = 'All', pkg = 'all';
@@ -209,11 +209,12 @@ function renderCat(){
   const list = items.map((x,idx)=>({...x,idx})).filter(x=>(cat==='All'||x.c===cat)&&(pkg==='all'||x.p.includes(pkg)));
   document.getElementById('catGrid').innerHTML = list.length ? list.map(x=>`
     <article class="item">
-      <div class="img">${svg(x.i)}</div>
+      <a class="img" href="products/${x.s}.html" target="_blank" rel="noopener" aria-label="${x.n}: details">${svg(x.i)}</a>
       <span class="overline">${x.c}</span>
-      <h3>${x.n}</h3>
+      <h3><a href="products/${x.s}.html" target="_blank" rel="noopener">${x.n}</a></h3>
       <span class="dim">${x.d}</span>
       <span class="dim">${x.p.join(' · ')}</span>
+      <a class="details" href="products/${x.s}.html" target="_blank" rel="noopener">View details ↗</a>
       <div class="foot"><span>Price on request</span><button type="button" data-add="${x.idx}" aria-pressed="${picked.has(x.idx)}">${picked.has(x.idx)?'Added':'Add to enquiry'}</button></div>
     </article>`).join('') : '<div class="empty">Nothing in this category for that package. Try another filter.</div>';
 }
@@ -225,7 +226,9 @@ document.getElementById('catGrid').addEventListener('click', e=>{
 function renderBasket(){
   document.getElementById('basket').textContent = picked.size ? `In your enquiry: ${[...picked].map(i=>items[i].n).join(', ')}.` : 'No catalogue items added yet.';
 }
-renderCat();
+// A product page's "Request a quote" link arrives as ?item=<slug>: add it to the enquiry.
+try{const q=new URLSearchParams(location.search).get('item');const k=items.findIndex(x=>x.s===q);if(k>=0)picked.add(k);}catch(_){}
+renderCat(); renderBasket();
 
 // Views (#projects / #catalogue)
 function show(view){

@@ -92,6 +92,9 @@ section.view{padding-block:var(--s12) var(--s8);scroll-margin-top:104px}
 .item .img{aspect-ratio:1/1;max-width:100%;background:var(--bone);display:grid;place-items:center;margin-bottom:var(--s1)}
 .item .img svg{width:56%;height:auto;color:var(--ink)}
 .item h3{font-size:17px;line-height:24px}
+.item h3 a{text-decoration:none;color:inherit}
+.item h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.item .details{font-size:14px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink);align-self:flex-start;padding-bottom:1px}
 .item .dim{font-size:14px;line-height:22px;color:var(--stone)}
 .item .foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s1);margin-top:auto;padding-top:var(--s1)}
 .item .foot span{font-size:13px;color:var(--stone)}
