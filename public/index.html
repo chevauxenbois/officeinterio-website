@@ -57,7 +57,7 @@
     <div class="wrap">
       <div class="head">
         <span class="overline">Selected projects</span>
-        <h2 class="h2">Offices we have delivered</h2>
+        <h2 class="h2">Offices we have designed</h2>
         <p class="muted">Every project runs the same six steps, from the first conversation to the keys.</p>
       </div>
 
@@ -71,7 +71,6 @@
       </div>
 
       <div class="projects" id="projectGrid"></div>
-      <p class="note">Project photographs are on their way. Each project will show the finished space, the brief and the numbers: seats, area and weeks on site.</p>
     </div>
   </section>
 
@@ -168,16 +167,15 @@ const svg = k => `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" s
 
 // Projects: placeholders until real, client-approved photographs arrive
 const projects = [
-  {slug:'project-01', type:'Workplace', icon:'workstation'},
-  {slug:'project-02', type:'Startup office', icon:'meeting'},
-  {slug:'project-03', type:'Workplace planning', icon:'cabin'}
+  {slug:'alfa', name:'Alfa', type:'Workplace', spaces:'Open workspace · Boardroom · Cabins · Reception', img:'images/projects/alfa/open-workspace-sm.jpg', alt:'Long rows of white workstations with soft green screens under a calm grid ceiling'},
+  {slug:'gamma', name:'Gamma', type:'Workplace', spaces:'Reception · Meeting rooms · Booths · Open workspace', img:'images/projects/gamma/reception-sm.jpg', alt:'Reception with a curved desk, timber slat wall and a blue lounge sofa'}
 ];
 document.getElementById('projectGrid').innerHTML = projects.map((p,i)=>`
   <a class="proj" href="projects/${p.slug}.html" target="_blank" rel="noopener">
-    <div class="img">${svg(p.icon)}<span class="caption">Photograph to come</span></div>
+    <div class="img"><img src="${p.img}" alt="${p.alt}" loading="lazy"><span class="caption">Design visual</span></div>
     <span class="overline">Project · 0${i+1} · ${p.type}</span>
-    <h3>Project name to come</h3>
-    <div class="facts"><span>Seats</span><span>Sq ft</span><span>Weeks on site</span></div>
+    <h3>${p.name}</h3>
+    <div class="facts"><span>${p.spaces}</span></div>
     <span class="more">View project ↗</span>
   </a>`).join('');
 
