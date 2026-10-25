@@ -24,6 +24,10 @@
   --accent:#d9a54f; --accent-ink:#1a1408; --grid:rgba(231,235,230,.05); --tag:#253031; color-scheme:dark}
 
 *{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
 body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--sheet)}
 .wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
