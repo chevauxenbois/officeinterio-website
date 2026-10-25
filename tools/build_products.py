@@ -5,7 +5,9 @@ Values marked typical are common specifications, not a factory's confirmed data.
 When a partner factory confirms a product, replace them and add real photos under
 public/images/products/<slug>/ (detail-1.jpg, space-1.jpg, white-1.jpg ...).
 """
-import html, os, re, json
+import html, os, re, json, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from links import PROJECTS, projects_using
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'public')
 OUT = os.path.join(ROOT, 'products')
@@ -155,6 +157,18 @@ def dims(w, d, label):
 </svg>'''
 
 
+def seen(p):
+    ps = projects_using(p['slug'])
+    if not ps:
+        return ''
+    cards = ''.join(f'<a href="../projects/{k}.html" target="_blank" rel="noopener"><div class="img photo"><img src="../{PROJECTS[k]["cover"]}" alt="" loading="lazy"></div><span class="overline">Project</span><h3>{e(PROJECTS[k]["name"])}</h3></a>' for k in ps)
+    return f'''  <section class="pd-sec" id="projects">
+    <div class="sec-head"><span class="overline">Seen in our projects</span><h2>In a finished office</h2><p class="muted">Projects where we fitted a similar piece.</p></div>
+    <div class="rel">{cards}</div>
+  </section>
+'''
+
+
 def page(p):
     rel = [BY[r] for r in p['rel']]
     w, d, lab = p['dim']
@@ -195,6 +209,7 @@ def page(p):
     <nav class="tabs" aria-label="Site sections">
       <a href="../index.html#projects">Projects</a>
       <a href="../index.html#catalogue" aria-current="page">Catalogue</a>
+      <a href="../why.html">Why us</a>
     </nav>
     <a class="pill" href="../index.html?item={p['slug']}#visit">Book a site visit</a>
   </div>
@@ -262,6 +277,7 @@ def page(p):
     <div class="faq">{''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in FAQ)}</div>
   </section>
 
+{seen(p)}
   <section class="pd-sec">
     <div class="sec-head"><span class="overline">Pairs well with</span><h2>Complete the space</h2></div>
     <div class="rel">{''.join(f'<a href="{r["slug"]}.html"><div class="img">{draw(r["i"])}</div><span class="overline">{e(r["c"])}</span><h3>{e(r["n"])}</h3></a>' for r in rel)}</div>
@@ -284,6 +300,7 @@ def page(p):
     <span>Office interiors in Pune · a brand of Omnaad Studio</span>
   </div>
 </footer>
+<script src="../js/site.js"></script>
 
 <script>
 // Gallery tabs
@@ -295,7 +312,7 @@ tabs.forEach(t=>t.addEventListener('click',()=>{{tabs.forEach(x=>{{const on=x===
 '''
 
 
-for p in P:
+if __name__ == '__main__':
+  for p in P:
     open(os.path.join(OUT, p['slug'] + '.html'), 'w').write(page(p))
-print('wrote', len(P), 'product pages')
-print('SLUGS', json.dumps([p['slug'] for p in P]))
+  print('wrote', len(P), 'product pages')

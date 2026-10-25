@@ -20,3 +20,10 @@ Content in [BRACKETS] or marked "Sample" / "Draft note" is placeholder and still
 - Voice: we and you, sentence case, short sentences, real numbers, no exclamation marks. Never: world-class, state-of-the-art, cutting-edge, one-stop solution, dream office, synergy.
 - Photos: real, daylit, straight verticals, client-approved. Renders are labelled "Design visual".
 - Logo files in `public/images/brand/` were cut from the brand book PDF. Replace with the original SVG files when available.
+
+## Shared parts and extra pages
+
+- `public/js/site.js` builds the footer and the floating enquiry button on every page. Contact details (phone, email, WhatsApp, address, social links, hours) live only in the `SITE` block at the top of that file. When a WhatsApp number is set, the floating button opens WhatsApp. Without one, it goes to the site visit form.
+- `public/why.html` is the "Why Office Interio" page. `#brokers` is the section for brokers and building managers.
+- `tools/links.py` records which catalogue pieces appear in which project (`USED`). Product pages show "Seen in our projects" and project pages show "Pieces in this project" from it. Rebuild both generators after editing it.
+- `tools/build_catalogue.py` builds `public/downloads/office-interio-catalogue.pdf` from the product data (needs Playwright). Rebuild it after changing products, and change `SITE_URL` once the domain is live.

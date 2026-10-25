@@ -1,4 +1,7 @@
-import html, os
+import html, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from links import USED
+from build_products import BY as PRODUCTS, draw
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'public', 'projects') + os.sep
 os.makedirs(OUT, exist_ok=True)
 
@@ -84,6 +87,7 @@ for i, slug in enumerate(ORDER):
     <nav class="tabs" aria-label="Site sections">
       <a href="../index.html#projects" aria-current="page">Projects</a>
       <a href="../index.html#catalogue">Catalogue</a>
+      <a href="../why.html">Why us</a>
     </nav>
     <a class="pill" href="../index.html#visit">Book a site visit</a>
   </div>
@@ -107,6 +111,11 @@ for i, slug in enumerate(ORDER):
   <div class="wrap">
     <dl class="facts-row">{facts}</dl>
 {chapters}
+
+    <section class="chapter used-in">
+      <div class="intro"><span class="overline">Furniture</span><h2>Pieces in this project</h2><p>Similar pieces from our catalogue, with sizes, finishes and specifications.</p></div>
+      <div class="used">{''.join(f'<a href="../products/{k}.html" target="_blank" rel="noopener"><div class="ph">{draw(PRODUCTS[k]["i"])}</div><span class="overline">{e(PRODUCTS[k]["c"])}</span><h3>{e(PRODUCTS[k]["n"])}</h3></a>' for k in USED[slug])}</div>
+    </section>
 
     <a class="next" href="{nxt}.html">
       <div class="row">
@@ -133,6 +142,7 @@ for i, slug in enumerate(ORDER):
     <span>Office interiors in Pune · a brand of Omnaad Studio</span>
   </div>
 </footer>
+<script src="../js/site.js"></script>
 
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
   <img id="lb-img" alt="">
