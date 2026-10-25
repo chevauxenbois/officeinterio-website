@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "officeinterio",
+  "compatibility_date": "2026-10-19",
+  // Only the public/ folder is published. Everything else in the repo stays private to the build.
+  "assets": {
+    "directory": "./public"
+  },
+  "workers_dev": true,
+  "preview_urls": false
+}
