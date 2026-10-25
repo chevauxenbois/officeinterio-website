@@ -1,0 +1,60 @@
+/* Project detail pages. Builds on site.css tokens. */
+nav.tabs a{font:500 15px/1 var(--font);color:var(--stone);text-decoration:none;padding:var(--s1) 0;border-bottom:2px solid transparent}
+nav.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--ink)}
+@media (max-width:640px){nav.tabs a{padding:var(--s2) 0 10px}}
+.crumb{padding-block:var(--s4) 0;font-size:15px}
+.crumb a{text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
+
+.p-head{display:flex;flex-direction:column;gap:var(--s3);padding-block:var(--s6) var(--s6)}
+.facts-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--ink);margin-top:var(--s2)}
+.facts-row div{padding:var(--s2) var(--s2) 0 0;display:flex;flex-direction:column;gap:4px;min-width:0}
+.facts-row dt{font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--stone)}
+.facts-row dd{margin:0;font-size:18px;line-height:26px;font-weight:500}
+
+.ph{background:var(--bone);position:relative;max-width:100%}
+.ph .caption{position:absolute;left:var(--s3);bottom:var(--s3)}
+.hero-photo{aspect-ratio:16/9}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3);margin-top:var(--s3)}
+.pair .ph{aspect-ratio:1/1}
+
+.block{padding-block:var(--s12) 0}
+.brief{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s8)}
+.brief > div{display:flex;flex-direction:column;gap:var(--s2);min-width:0}
+.brief h2{font-size:28px;line-height:36px}
+.brief ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--bone)}
+.brief li{padding:12px 0;border-bottom:1px solid var(--bone)}
+
+.journey{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s6) var(--s4);margin-top:var(--s6)}
+.step{display:flex;flex-direction:column;gap:var(--s1);min-width:0}
+.step .ph{aspect-ratio:4/3;margin-bottom:var(--s1)}
+.step h3{font-size:22px;line-height:30px}
+.step p{color:var(--stone);font-size:15px;line-height:24px}
+
+.used{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
+.used a{display:flex;flex-direction:column;gap:var(--s1);text-decoration:none;color:var(--ink);min-width:0}
+.used .ph{aspect-ratio:1/1;display:grid;place-items:center}
+.used .ph svg{width:56%;height:auto;color:var(--ink)}
+.used h3{font-size:17px;line-height:24px}
+
+.quote{background:var(--bone);padding:var(--s8) var(--s6);margin-top:var(--s12)}
+.quote blockquote{margin:0;font-size:28px;line-height:38px;font-weight:500;max-width:28em}
+.quote .who{margin-top:var(--s3);font-size:14px;color:var(--stone)}
+
+.pager{display:flex;justify-content:space-between;gap:var(--s3);padding-block:var(--s6);border-top:1px solid var(--bone);margin-top:var(--s12);font-size:16px;font-weight:500}
+.pager a{text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px}
+
+@media (max-width:960px){
+  .facts-row{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:var(--s3)}
+  .brief{grid-template-columns:1fr;gap:var(--s6)}
+  .journey{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .used{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .facts-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pair,.journey{grid-template-columns:1fr}
+  .block{padding-block:var(--s8) 0}
+  .quote{padding:var(--s6) var(--s3);margin-top:var(--s8)}
+  .quote blockquote{font-size:22px;line-height:30px}
+  .h1{font-size:36px;line-height:44px}
+  .pager{margin-top:var(--s8)}
+}

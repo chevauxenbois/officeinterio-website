@@ -3,6 +3,8 @@
 Public website for Office Interio, a brand of Omnaad Studio (Pune).
 
 - `public/` is everything that gets published. `public/index.html` is the whole site for now: Projects (completed work) and Catalogue (office furniture).
+- `public/projects/project-NN.html` is one page per project; cards on the home page open them in a new tab. To add a project, copy a page, update its text and the prev/next links, and add it to the `projects` list in `public/index.html`.
+- `public/css/site.css` holds the shared brand styles; `public/css/project.css` adds the project-page layout.
 - `public/images/` holds photos.
 - Hosting: Cloudflare Workers static assets (free), set up in `wrangler.jsonc`. Every change to `main` deploys automatically to https://officeinterio.harshkahateprojects.workers.dev.
 

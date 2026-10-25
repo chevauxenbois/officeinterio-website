@@ -10,151 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap">
-<style>
-/* Office Interio brand book 2026: Jost only, Paper/Bone/Ink neutrals, one Oak accent per layout,
-   square corners, pills for buttons only, 8px spacing unit. Light only: the brand is daylit. */
-:root{
-  --paper:#F5F5F3; --bone:#E3DDD1; --travertine:#9A958C; --stone:#605D58; --ink:#111111;
-  --oak:#9A7249; --tobacco:#6B4F32;
-  --font:"Jost",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s6:48px; --s8:64px; --s12:96px;
-  color-scheme:light;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/26px var(--font)}
-img{max-width:100%;display:block}
-[hidden]{display:none!important}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-h1,h2,h3{font-weight:500;margin:0;text-wrap:balance}
-p{margin:0}
-.wrap{max-width:1200px;margin:0 auto;padding-left:max(var(--s3),env(safe-area-inset-left,0px));padding-right:max(var(--s3),env(safe-area-inset-right,0px))}
-
-/* type scale */
-.display{font-size:64px;line-height:68px;letter-spacing:-.01em}
-.h1{font-size:48px;line-height:56px}
-.h2{font-size:36px;line-height:44px}
-.overline{font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tobacco)}
-.muted{color:var(--stone)}
-.hair{width:32px;height:2px;background:var(--oak);border:0;margin:0}
-
-/* buttons: the pill is for calls to action only */
-.pill{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 var(--s3);border-radius:999px;font:500 15px/1 var(--font);text-decoration:none;cursor:pointer;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper)}
-.pill.line{background:transparent;color:var(--ink)}
-.pill.light{background:var(--paper);border-color:var(--paper);color:var(--ink)}
-
-/* header */
-header.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--bone);padding-top:env(safe-area-inset-top,0px)}
-.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);min-height:80px}
-.logo{display:block;flex-shrink:0}
-.logo img{height:36px;width:auto}
-nav.tabs{display:flex;gap:var(--s4)}
-nav.tabs button{font:500 15px/1 var(--font);color:var(--stone);background:none;border:0;padding:var(--s1) 0;cursor:pointer;border-bottom:2px solid transparent}
-nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
-
-/* hero */
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--s8);padding-block:var(--s12) var(--s8);align-items:center}
-.hero .copy{display:flex;flex-direction:column;gap:var(--s3);min-width:0}
-.hero .lede{font-size:18px;line-height:28px;max-width:34em;color:var(--stone)}
-.hero .actions{display:flex;gap:var(--s2);flex-wrap:wrap;padding-top:var(--s1)}
-.channel{background:var(--bone);border-radius:0;aspect-ratio:1/1;width:100%;max-width:100%;padding:var(--s4);display:flex;flex-direction:column;justify-content:center;gap:var(--s2);min-width:0}
-.channel svg{width:100%;height:auto;color:var(--ink)}
-.caption{font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
-
-/* promise band */
-.promise{background:var(--ink);color:var(--paper)}
-.promise .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s6);padding-block:var(--s8)}
-.promise h3{font-size:22px;line-height:30px;margin-bottom:var(--s1)}
-.promise p{color:#d6d6d2}
-
-section.view{padding-block:var(--s12) var(--s8);scroll-margin-top:104px}
-#visit{scroll-margin-top:104px}
-.head{display:flex;flex-direction:column;gap:var(--s2);margin-bottom:var(--s6);max-width:40em}
-
-/* process */
-.process{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-top:1px solid var(--ink);margin-bottom:var(--s8)}
-.process div{padding:var(--s3) var(--s2) 0 0;min-width:0}
-.process .n{font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;color:var(--stone)}
-.process b{display:block;font-weight:500;font-size:18px;line-height:26px;margin:var(--s1) 0 4px}
-.process span.t{font-size:14px;line-height:22px;color:var(--stone);display:block}
-
-/* projects */
-.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
-.proj{display:flex;flex-direction:column;gap:var(--s2);min-width:0}
-.proj .img{aspect-ratio:4/5;max-width:100%;background:var(--bone);display:flex;align-items:center;justify-content:center;position:relative}
-.proj .img svg{width:62%;height:auto;color:var(--ink)}
-.proj .img .caption{position:absolute;left:var(--s2);bottom:var(--s2)}
-.proj h3{font-size:22px;line-height:30px}
-.facts{display:flex;gap:var(--s3);font-size:14px;line-height:22px;color:var(--stone);flex-wrap:wrap}
-.note{margin-top:var(--s6);background:var(--bone);padding:var(--s3);font-size:14px;line-height:22px}
-
-/* catalogue */
-.filters{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin-bottom:var(--s3);border-bottom:1px solid var(--bone)}
-.filters button{font:500 15px/1 var(--font);background:none;border:0;border-bottom:2px solid transparent;color:var(--stone);padding:var(--s2) 0;cursor:pointer}
-.filters button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)}
-.pkgrow{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;margin-bottom:var(--s6)}
-.pkgrow select{font:400 15px var(--font);padding:10px var(--s2);border:1px solid var(--travertine);border-radius:0;background:var(--paper);color:var(--ink);min-height:44px}
-.cat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4) var(--s3)}
-.item{display:flex;flex-direction:column;gap:var(--s1);min-width:0}
-.item .img{aspect-ratio:1/1;max-width:100%;background:var(--bone);display:grid;place-items:center;margin-bottom:var(--s1)}
-.item .img svg{width:56%;height:auto;color:var(--ink)}
-.item h3{font-size:17px;line-height:24px}
-.item .dim{font-size:14px;line-height:22px;color:var(--stone)}
-.item .foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s1);margin-top:auto;padding-top:var(--s1)}
-.item .foot span{font-size:13px;color:var(--stone)}
-.item .foot button{font:500 14px/1 var(--font);background:none;border:0;border-bottom:1px solid var(--ink);color:var(--ink);padding:6px 0;cursor:pointer;min-height:32px}
-.item .foot button[aria-pressed="true"]{border-bottom-width:2px}
-.empty{grid-column:1/-1;padding:var(--s6);text-align:center;color:var(--stone);background:var(--bone)}
-.packages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s8)}
-.packages div{background:var(--bone);padding:var(--s4) var(--s3);display:flex;flex-direction:column;gap:var(--s1);min-width:0}
-.packages h3{font-size:24px;line-height:32px}
-.packages p{font-size:15px;line-height:24px;color:var(--stone)}
-
-/* site visit */
-.visit{background:var(--ink);color:var(--paper)}
-.visit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:var(--s8);padding-block:var(--s12)}
-.visit .copy{display:flex;flex-direction:column;gap:var(--s3);min-width:0}
-.visit .overline{color:var(--bone)}
-.visit p{color:#d6d6d2;max-width:30em}
-.basket{font-size:14px;line-height:22px}
-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3) var(--s2);min-width:0}
-form label{display:flex;flex-direction:column;gap:var(--s1);font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;min-width:0}
-form input,form select,form textarea{font:400 16px/24px var(--font);padding:11px var(--s2);border-radius:0;border:1px solid var(--paper);background:var(--paper);color:var(--ink);width:100%;min-height:48px}
-form .full{grid-column:1/-1}
-form .pill{justify-self:start}
-#sent{grid-column:1/-1;color:var(--paper)}
-
-footer{padding-block:var(--s6);border-top:1px solid var(--bone)}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);flex-wrap:wrap;font-size:14px;color:var(--stone)}
-footer img{height:28px;width:auto}
-
-@media (max-width:960px){
-  .hero .wrap,.visit .wrap{grid-template-columns:1fr;gap:var(--s6)}
-  .hero .wrap{padding-block:var(--s8) var(--s6)}
-  .display{font-size:48px;line-height:56px}
-  .projects{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cat{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .process{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:var(--s3)}
-  .promise .wrap{grid-template-columns:1fr;gap:var(--s4)}
-  .bar .pill{display:none}
-}
-@media (max-width:640px){
-  .wrap{padding-left:max(var(--s2),env(safe-area-inset-left,0px));padding-right:max(var(--s2),env(safe-area-inset-right,0px))}
-  .bar .wrap{min-height:0;flex-wrap:wrap;row-gap:0;padding-top:var(--s2)}
-  .logo img{height:28px}
-  nav.tabs{width:100%;gap:var(--s3)}
-  nav.tabs button{padding:var(--s2) 0 10px}
-  .display{font-size:40px;line-height:46px}
-  .h2{font-size:30px;line-height:38px}
-  .projects,.packages{grid-template-columns:1fr}
-  .cat{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3) var(--s2)}
-  .process{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .channel{padding:var(--s4) var(--s2) var(--s3)}
-  form{grid-template-columns:1fr}
-  section.view{padding-block:var(--s8) var(--s6)}
-}
-</style>
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 
@@ -312,17 +168,18 @@ const svg = k => `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" s
 
 // Projects: placeholders until real, client-approved photographs arrive
 const projects = [
-  {type:'Workplace', icon:'workstation'},
-  {type:'Startup office', icon:'meeting'},
-  {type:'Workplace planning', icon:'cabin'}
+  {slug:'project-01', type:'Workplace', icon:'workstation'},
+  {slug:'project-02', type:'Startup office', icon:'meeting'},
+  {slug:'project-03', type:'Workplace planning', icon:'cabin'}
 ];
 document.getElementById('projectGrid').innerHTML = projects.map((p,i)=>`
-  <article class="proj">
+  <a class="proj" href="projects/${p.slug}.html" target="_blank" rel="noopener">
     <div class="img">${svg(p.icon)}<span class="caption">Photograph to come</span></div>
     <span class="overline">Project · 0${i+1} · ${p.type}</span>
     <h3>Project name to come</h3>
     <div class="facts"><span>Seats</span><span>Sq ft</span><span>Weeks on site</span></div>
-  </article>`).join('');
+    <span class="more">View project ↗</span>
+  </a>`).join('');
 
 // Catalogue: typical items; real specifications come from partner factories
 const items = [
