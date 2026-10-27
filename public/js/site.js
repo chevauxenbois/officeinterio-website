@@ -1,8 +1,8 @@
 // Shared footer and floating enquiry button for every page.
 // Contact details live here only: fill them in once and every page updates.
 const SITE = {
-  phone: '',        // e.g. '+91 98765 43210'
-  email: '',        // e.g. 'hello@officeinterio.com'
+  phone: '+91 96577 11997',
+  email: 'contact.officeinterio@gmail.com',
   whatsapp: '',     // digits with country code, e.g. '919876543210'
   address: '',      // e.g. 'Office 4, Baner Road, Pune 411045'
   instagram: '',    // full profile URL
