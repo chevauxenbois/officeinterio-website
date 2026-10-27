@@ -24,6 +24,7 @@ Content in [BRACKETS] or marked "Sample" / "Draft note" is placeholder and still
 ## Shared parts and extra pages
 
 - `public/js/site.js` builds the footer and the floating enquiry button on every page. Contact details (phone, email, WhatsApp, address, social links, hours) live only in the `SITE` block at the top of that file. When a WhatsApp number is set, the floating button opens WhatsApp. Without one, it goes to the site visit form.
+- `public/enquiry.html` is the enquiry form (about you, your space, your team, anything else). Only name, a phone or email, and seat count are required. Catalogue picks arrive as `?items=a,b` or `?item=a`. It is not connected to a server: when `SITE.email` (or `SITE.whatsapp`) is set in `site.js`, sending opens the visitor's email app (or WhatsApp) with the enquiry filled in. Every "Book a site visit" button links here; the home page `#visit` section explains the form and links to it.
 - `public/why.html` is the "Why Office Interio" page. `#brokers` is the section for brokers and building managers.
 - `tools/links.py` records which catalogue pieces appear in which project (`USED`). Product pages show "Seen in our projects" and project pages show "Pieces in this project" from it. Rebuild both generators after editing it.
 - `tools/build_catalogue.py` builds `public/downloads/office-interio-catalogue.pdf` from the product data (needs Playwright). Rebuild it after changing products, and change `SITE_URL` once the domain is live.

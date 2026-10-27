@@ -136,7 +136,7 @@ def build():
       <li><span>01</span>Brief and site visit</li><li><span>02</span>Layout of your floor</li><li><span>03</span>3D view before you order</li>
       <li><span>04</span>Quotes from partner factories, side by side</li><li><span>05</span>Delivery and installation, coordinated by us</li><li><span>06</span>Handover and warranty in writing</li>
     </ol>
-    <a class="cta" href="{SITE_URL}/index.html#visit">Book a site visit</a>
+    <a class="cta" href="{SITE_URL}/enquiry.html">Book a site visit</a>
   </div>
   <p class="note">{e(SITE_URL.split("//")[1])} · Office Interio, a brand of Omnaad Studio, Pune</p>
 </section>'''

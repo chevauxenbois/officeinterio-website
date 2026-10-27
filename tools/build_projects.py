@@ -89,7 +89,7 @@ for i, slug in enumerate(ORDER):
       <a href="../index.html#catalogue">Catalogue</a>
       <a href="../why.html">Why us</a>
     </nav>
-    <a class="pill" href="../index.html#visit">Book a site visit</a>
+    <a class="pill" href="../enquiry.html">Book a site visit</a>
   </div>
 </header>
 
@@ -132,7 +132,7 @@ for i, slug in enumerate(ORDER):
       <span class="overline">Planning a similar office?</span>
       <h2 class="h2">We'll walk the space with you.</h2>
     </div>
-    <a class="pill light" href="../index.html#visit">Book a site visit</a>
+    <a class="pill light" href="../enquiry.html">Book a site visit</a>
   </div>
 </section>
 

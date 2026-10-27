@@ -182,3 +182,10 @@ footer.site-footer > .wrap:first-child{display:grid;grid-template-columns:1.4fr 
 nav.tabs .navlink{font:500 15px/1 var(--font);color:var(--stone);text-decoration:none;padding:var(--s1) 0;border-bottom:2px solid transparent}
 nav.tabs .navlink:hover{color:var(--ink)}
 @media (max-width:640px){nav.tabs .navlink{padding:var(--s2) 0 10px}}
+
+/* home: what the enquiry form asks */
+.asks{list-style:none;margin:0;padding:0;border-top:1px solid var(--paper);align-self:start}
+.asks li{display:grid;grid-template-columns:48px 1fr;gap:var(--s2);padding:var(--s3) 0;border-bottom:1px solid #3a3a38}
+.asks b{font-size:12px;line-height:28px;font-weight:500;letter-spacing:.14em;color:var(--bone)}
+.asks h3{font-size:20px;line-height:28px;color:var(--paper);margin-bottom:4px}
+.asks p{color:#d6d6d2;font-size:15px;line-height:24px}

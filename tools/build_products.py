@@ -211,7 +211,7 @@ def page(p):
       <a href="../index.html#catalogue" aria-current="page">Catalogue</a>
       <a href="../why.html">Why us</a>
     </nav>
-    <a class="pill" href="../index.html?item={p['slug']}#visit">Book a site visit</a>
+    <a class="pill" href="../enquiry.html?item={p['slug']}">Book a site visit</a>
   </div>
 </header>
 
@@ -235,7 +235,7 @@ def page(p):
         <div><dt>Price</dt><dd>On request, quoted for your quantity</dd></div>
       </dl>
       <div class="actions">
-        <a class="pill" href="../index.html?item={p['slug']}#visit">Request a quote</a>
+        <a class="pill" href="../enquiry.html?item={p['slug']}">Request a quote</a>
         <a class="pill line" href="#specs">See full specification</a>
       </div>
     </div>
@@ -264,11 +264,11 @@ def page(p):
   <section class="pd-sec" id="downloads">
     <div class="sec-head"><span class="overline">Downloads</span><h2>Drawings and documents</h2><p class="muted">Sent by email once the partner factory is confirmed for your project.</p></div>
     <ul class="dl">
-      <li><span><b>Specification sheet</b><small>PDF</small></span><a href="../index.html?item={p['slug']}#visit">Request</a></li>
-      <li><span><b>2D CAD block</b><small>DWG, for your layout</small></span><a href="../index.html?item={p['slug']}#visit">Request</a></li>
-      <li><span><b>3D model</b><small>SKP or 3DS</small></span><a href="../index.html?item={p['slug']}#visit">Request</a></li>
-      <li><span><b>Installation guide</b><small>PDF</small></span><a href="../index.html?item={p['slug']}#visit">Request</a></li>
-      <li><span><b>Warranty terms</b><small>PDF, from the factory</small></span><a href="../index.html?item={p['slug']}#visit">Request</a></li>
+      <li><span><b>Specification sheet</b><small>PDF</small></span><a href="../enquiry.html?item={p['slug']}">Request</a></li>
+      <li><span><b>2D CAD block</b><small>DWG, for your layout</small></span><a href="../enquiry.html?item={p['slug']}">Request</a></li>
+      <li><span><b>3D model</b><small>SKP or 3DS</small></span><a href="../enquiry.html?item={p['slug']}">Request</a></li>
+      <li><span><b>Installation guide</b><small>PDF</small></span><a href="../enquiry.html?item={p['slug']}">Request</a></li>
+      <li><span><b>Warranty terms</b><small>PDF, from the factory</small></span><a href="../enquiry.html?item={p['slug']}">Request</a></li>
     </ul>
   </section>
 
@@ -290,7 +290,7 @@ def page(p):
       <span class="overline">Furnishing a floor?</span>
       <h2 class="h2">We'll quote for your seat count.</h2>
     </div>
-    <a class="pill light" href="../index.html?item={p['slug']}#visit">Request a quote</a>
+    <a class="pill light" href="../enquiry.html?item={p['slug']}">Request a quote</a>
   </div>
 </section>
 

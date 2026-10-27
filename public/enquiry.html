@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enquiry form · Office Interio</title>
+<meta name="description" content="Tell us about your office in about two minutes. We reply within a working day and send a free layout, a 3D view and factory quotes.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="images/brand/symbol-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/project.css">
+<style>
+.enq{display:grid;grid-template-columns:4fr 8fr;gap:var(--s8);padding-block:var(--s8) var(--s12);align-items:start}
+.enq-side{display:flex;flex-direction:column;gap:var(--s3);position:sticky;top:120px;min-width:0}
+.enq-side .lede{font-size:20px;line-height:32px}
+.enq-side ol{margin:0;padding:0;list-style:none;border-top:1px solid var(--ink)}
+.enq-side li{display:grid;grid-template-columns:40px 1fr;gap:var(--s1);padding:var(--s2) 0;border-bottom:1px solid var(--bone)}
+.enq-side li b{font-weight:500;font-size:12px;letter-spacing:.14em;color:var(--stone)}
+.enq-side li p{color:var(--stone);font-size:15px;line-height:24px}
+.enq-side li strong{font-weight:500;color:var(--ink);display:block}
+#enquiry{display:flex;flex-direction:column;gap:var(--s6)}
+#enquiry fieldset{border:0;border-top:1px solid var(--ink);margin:0;padding:var(--s3) 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3) var(--s2);min-width:0}
+#enquiry legend{float:left;width:100%;grid-column:1/-1;padding:0;margin-bottom:var(--s1);display:flex;justify-content:space-between;gap:var(--s2);align-items:baseline}
+#enquiry legend span{font-size:20px;line-height:28px;font-weight:500}
+#enquiry legend small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:500}
+#enquiry label{display:flex;flex-direction:column;gap:var(--s1);font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;min-width:0}
+#enquiry label em{font-style:normal;color:var(--tobacco)}
+#enquiry label .hint{text-transform:none;letter-spacing:0;font-weight:400;font-size:13px;line-height:18px;color:var(--stone)}
+#enquiry input,#enquiry select,#enquiry textarea{font:400 16px/24px var(--font);padding:11px var(--s2);border-radius:0;border:1px solid var(--travertine);background:#fff;color:var(--ink);width:100%;min-height:48px}
+#enquiry input:focus,#enquiry select:focus,#enquiry textarea:focus{border-color:var(--ink);outline:none}
+#enquiry [aria-invalid="true"]{border-color:#9b2c1f}
+#enquiry .full{grid-column:1/-1}
+.choices{display:flex;flex-wrap:wrap;gap:var(--s1)}
+#enquiry .choices label{flex-direction:row;align-items:center;gap:10px;text-transform:none;letter-spacing:0;font-size:15px;line-height:20px;font-weight:400;border:1px solid var(--travertine);background:#fff;padding:12px var(--s2);min-height:48px;cursor:pointer}
+#enquiry .choices input{width:18px;height:18px;min-height:0;margin:0;accent-color:var(--ink)}
+#enquiry .choices label:has(input:checked){border-color:var(--ink);background:var(--bone)}
+.group-label{grid-column:1/-1;font-size:12px;line-height:16px;font-weight:500;letter-spacing:.14em;text-transform:uppercase}
+.picked{grid-column:1/-1;background:var(--bone);padding:var(--s2);font-size:15px;line-height:24px}
+.picked ul{margin:6px 0 0;padding-left:20px}
+.submit-row{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3)}
+.submit-row p{color:var(--stone);font-size:14px;line-height:22px;max-width:28em}
+#enq-msg{border-left:2px solid var(--oak);padding:var(--s2) var(--s3);background:var(--bone)}
+@media (max-width:960px){.enq{grid-template-columns:1fr;gap:var(--s6)}.enq-side{position:static}}
+@media (max-width:640px){#enquiry fieldset{grid-template-columns:1fr}#enquiry legend{flex-direction:column;gap:4px}.enq{padding-top:var(--s6)}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Office Interio home"><img src="images/brand/logo-horizontal-ink.png" alt="Office Interio" width="636" height="85"></a>
+    <nav class="tabs" aria-label="Site sections">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#catalogue">Catalogue</a>
+      <a href="why.html">Why us</a>
+    </nav>
+    <a class="pill" href="enquiry.html" aria-current="page">Book a site visit</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap enq">
+    <aside class="enq-side">
+      <span class="overline">Enquiry form</span>
+      <hr class="hair">
+      <h1 class="h1">Tell us about your office.</h1>
+      <p class="lede">It takes about two minutes. Only three fields are required, and "not sure" is a fine answer to the rest.</p>
+      <ol>
+        <li><b>01</b><p><strong>We call you within a working day</strong>to fix a site visit at a time that suits you.</p></li>
+        <li><b>02</b><p><strong>We walk the space with you</strong>and take measurements and photos.</p></li>
+        <li><b>03</b><p><strong>You get a free layout pack</strong>two layout options, a 3D view and quotes from our partner factories, at no cost.</p></li>
+      </ol>
+      <p class="muted">Brokers and building managers: choose "Broker" or "Building or facility manager" below and tell us about your client's space.</p>
+    </aside>
+
+    <form id="enquiry" novalidate>
+      <fieldset>
+        <legend><span>1. About you</span><small>Required: name and one way to reach you</small></legend>
+        <label><span>Name <em>*</em></span><input id="e-name" name="name" required autocomplete="name"></label>
+        <label>Company<input id="e-company" name="company" autocomplete="organization"></label>
+        <label>Phone or WhatsApp<input id="e-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91"></label>
+        <label>Email<input id="e-email" name="email" type="email" autocomplete="email"></label>
+        <div class="group-label">You are</div>
+        <div class="choices full" role="radiogroup" aria-label="You are">
+          <label><input type="radio" name="role" value="Company moving or upgrading" checked>Company moving or upgrading</label>
+          <label><input type="radio" name="role" value="Broker">Broker</label>
+          <label><input type="radio" name="role" value="Building or facility manager">Building or facility manager</label>
+          <label><input type="radio" name="role" value="Co-working operator">Co-working operator</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>2. Your space</span><small>Optional</small></legend>
+        <label>Area
+          <select name="location"><option value="">Choose</option><option>Hinjewadi</option><option>Kharadi</option><option>Baner or Balewadi</option><option>Magarpatta or Hadapsar</option><option>Viman Nagar or Yerawada</option><option>Elsewhere in Pune</option><option>Still looking</option></select>
+        </label>
+        <label>Building name<input name="building" placeholder="e.g. tech park, tower, floor"></label>
+        <label>Office size (sq ft)<input name="area" inputmode="numeric" placeholder="e.g. 3000"><span class="hint">Carpet area if you know it. Leave blank if not sure.</span></label>
+        <label>Current state of the space
+          <select name="state"><option value="">Choose</option><option>Bare shell (nothing done)</option><option>Warm shell (ceiling, lights, AC done)</option><option>Already furnished, needs a refresh</option><option>Not leased yet</option></select>
+        </label>
+        <label class="full">Do you have a floor plan?
+          <select name="plan"><option value="">Choose</option><option>Yes, I can share it</option><option>Not yet, the landlord has one</option><option>No</option></select>
+          <span class="hint">You don't need to attach it now. We'll ask for it on WhatsApp or email after you send this.</span>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>3. Your team</span><small>Required: number of seats</small></legend>
+        <label><span>Number of seats <em>*</em></span><input id="e-seats" name="seats" required inputmode="numeric" placeholder="e.g. 50"><span class="hint">Everyone who needs a desk, including managers.</span></label>
+        <label>Move in by
+          <select name="movein"><option value="">Choose</option><option>Within 1 month</option><option>1 to 3 months</option><option>3 to 6 months</option><option>More than 6 months</option><option>Not sure yet</option></select>
+        </label>
+        <label>Cabins (private offices)<input name="cabins" inputmode="numeric" placeholder="e.g. 2"></label>
+        <label>Meeting rooms<input name="meetings" inputmode="numeric" placeholder="e.g. 2"></label>
+        <label class="full">Furniture budget per seat
+          <select name="budget"><option value="">Prefer not to say</option><option>Under ₹25,000</option><option>₹25,000 to ₹40,000</option><option>₹40,000 to ₹60,000</option><option>Over ₹60,000</option><option>Not sure, guide me</option></select>
+          <span class="hint">A rough range helps us suggest the right factories and package.</span>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend><span>4. Anything else</span><small>Optional</small></legend>
+        <div class="picked" id="picked" hidden></div>
+        <label class="full">Notes<textarea name="notes" rows="4" placeholder="Must-haves, a look you like, furniture you want to reuse, or anything else we should know"></textarea></label>
+      </fieldset>
+
+      <div class="submit-row">
+        <button class="pill" type="submit">Send enquiry</button>
+        <p>We use your details only to reply to this enquiry. We do not share them.</p>
+      </div>
+      <p id="enq-msg" role="status" hidden></p>
+    </form>
+  </div>
+</main>
+
+<footer></footer>
+<script src="js/site.js"></script>
+<script>
+// Catalogue items picked on the home page or a product page arrive as ?items=a,b or ?item=a.
+const qs = new URLSearchParams(location.search);
+const slugs = [...new Set([...(qs.get('items')||'').split(','), qs.get('item')||''].map(s=>s.trim()).filter(s=>/^[a-z0-9-]+$/.test(s)))];
+const nice = s => s.charAt(0).toUpperCase() + s.slice(1).replace(/-/g,' ');
+if (slugs.length) {
+  const box = document.getElementById('picked');
+  box.hidden = false;
+  box.innerHTML = '<b>From the catalogue, added to this enquiry:</b><ul>' + slugs.map(s=>'<li>'+nice(s)+'</li>').join('') + '</ul>';
+}
+
+const form = document.getElementById('enquiry'), msg = document.getElementById('enq-msg');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const need = [['e-name', v('e-name')], ['e-seats', v('e-seats')]];
+  const reach = v('e-phone') || v('e-email');
+  need.forEach(([id, val]) => document.getElementById(id).setAttribute('aria-invalid', !val));
+  ['e-phone','e-email'].forEach(id => document.getElementById(id).setAttribute('aria-invalid', !reach));
+  msg.hidden = false;
+  if (!v('e-name') || !reach || !v('e-seats')) {
+    msg.textContent = 'Please add your name, a phone number or email, and the number of seats, so we can reply.';
+    (form.querySelector('[aria-invalid="true"]')||form).focus();
+    return;
+  }
+  // Build a plain-text summary of everything filled in.
+  const data = new FormData(form), labels = {name:'Name',company:'Company',phone:'Phone',email:'Email',role:'You are',location:'Area',building:'Building',area:'Office size (sq ft)',state:'State of space',plan:'Floor plan',seats:'Seats',movein:'Move in by',cabins:'Cabins',meetings:'Meeting rooms',budget:'Budget per seat',notes:'Notes'};
+  const lines = Object.keys(labels).map(k => [labels[k], (data.get(k)||'').toString().trim()]).filter(([,x]) => x).map(([l,x]) => l + ': ' + x);
+  if (slugs.length) lines.push('Catalogue items: ' + slugs.map(nice).join(', '));
+  const text = 'New enquiry from the Office Interio website\n\n' + lines.join('\n');
+  const S = (typeof SITE !== 'undefined') ? SITE : {};
+  if (S.email) {
+    location.href = 'mailto:' + S.email + '?subject=' + encodeURIComponent('Office enquiry: ' + v('e-name') + ', ' + v('e-seats') + ' seats') + '&body=' + encodeURIComponent(text);
+    msg.textContent = 'Thank you, ' + v('e-name') + '. Your email app should open with your enquiry filled in. Press send and we will reply within a working day.';
+  } else if (S.whatsapp) {
+    window.open('https://wa.me/' + S.whatsapp.replace(/\D/g,'') + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    msg.textContent = 'Thank you, ' + v('e-name') + '. WhatsApp should open with your enquiry filled in. Press send and we will reply within a working day.';
+  } else {
+    msg.textContent = 'Thank you, ' + v('e-name') + '. Online enquiries are not connected yet, so this was not sent. Please check back soon.';
+  }
+});
+</script>
+</body>
+</html>

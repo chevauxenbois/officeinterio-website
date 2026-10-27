@@ -22,7 +22,7 @@ const SITE = {
     SITE.email && `<li><span>Email</span><a href="mailto:${esc(SITE.email)}">${esc(SITE.email)}</a></li>`,
     wa && `<li><span>WhatsApp</span><a href="${wa}" target="_blank" rel="noopener">Message us</a></li>`,
     SITE.address && `<li><span>Studio</span><span>${esc(SITE.address)}</span></li>`,
-  ].filter(Boolean).join('') || `<li><span>Contact</span><a href="${u('index.html#visit')}">Book a site visit</a></li>`;
+  ].filter(Boolean).join('') || `<li><span>Contact</span><a href="${u('enquiry.html')}">Book a site visit</a></li>`;
 
   const social = [
     SITE.instagram && `<a href="${esc(SITE.instagram)}" target="_blank" rel="noopener">Instagram</a>`,
@@ -37,7 +37,7 @@ const SITE = {
     <div class="f-brand">
       <img src="${u('images/brand/logo-horizontal-ink.png')}" alt="Office Interio" width="636" height="85">
       <p>Spaces that work. Office interiors in Pune, from first sketch to handover.</p>
-      <a class="pill" href="${u('index.html#visit')}">Book a site visit</a>
+      <a class="pill" href="${u('enquiry.html')}">Book a site visit</a>
     </div>
     <nav class="f-col" aria-label="Explore">
       <h2>Explore</h2>
@@ -53,7 +53,7 @@ const SITE = {
     </div>
     <div class="f-col">
       <h2>For partners</h2>
-      <a href="${u('index.html#visit')}">Refer a tenant</a>
+      <a href="${u('enquiry.html')}">Refer a tenant</a>
       <a href="${u('why.html#brokers')}">Brokers and building managers</a>
       ${social ? `<div class="social">${social}</div>` : ''}
     </div>
@@ -61,12 +61,12 @@ const SITE = {
   <div class="wrap f-base"><span>© ${new Date().getFullYear()} Office Interio, a brand of Omnaad Studio</span><span>Pune, India</span></div>`;
   }
 
-  // Floating enquiry button: WhatsApp when a number is set, otherwise the site visit form.
-  if (!document.querySelector('.fab')) {
+  // Floating enquiry button: WhatsApp when a number is set, otherwise the enquiry form.
+  if (!document.querySelector('.fab') && !document.getElementById('enquiry')) {
     const a = document.createElement('a');
     a.className = 'fab';
     if (wa) { a.href = wa; a.target = '_blank'; a.rel = 'noopener'; a.innerHTML = '<span class="dot" aria-hidden="true"></span>WhatsApp us'; }
-    else { a.href = u('index.html#visit'); a.innerHTML = '<span class="dot" aria-hidden="true"></span>Quick enquiry'; }
+    else { a.href = u('enquiry.html'); a.innerHTML = '<span class="dot" aria-hidden="true"></span>Quick enquiry'; }
     document.body.appendChild(a);
     // Hide it while the enquiry form itself is on screen.
     const visit = document.getElementById('visit');

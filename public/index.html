@@ -22,7 +22,7 @@
       <button role="tab" id="tab-catalogue" data-view="catalogue" aria-selected="false">Catalogue</button>
       <a class="navlink" href="why.html">Why us</a>
     </nav>
-    <a class="pill" href="#visit">Book a site visit</a>
+    <a class="pill" href="enquiry.html">Book a site visit</a>
   </div>
 </header>
 
@@ -34,7 +34,7 @@
       <h1 class="display">Spaces that work.</h1>
       <p class="lede">We design and furnish offices, from first sketch to handover. You get a layout for your floor, a 3D view before you order, quotes from our partner factories, and one team that sees installation through.</p>
       <div class="actions">
-        <a class="pill" href="#visit">Book a site visit</a>
+        <a class="pill" href="enquiry.html">Book a site visit</a>
         <button class="pill line" type="button" data-go="catalogue">Browse the catalogue</button>
       </div>
     </div>
@@ -108,27 +108,19 @@
 <section class="visit" id="visit">
   <div class="wrap">
     <div class="copy">
-      <span class="overline">Book a site visit</span>
-      <h2 class="h2">We'll walk the space with you.</h2>
-      <p>Tell us your seat count and move-in date. After the visit we send a layout, a 3D view and factory quotes, at no cost to you.</p>
-      <p>Brokers and building managers are welcome to refer tenants.</p>
+      <span class="overline">Fill the enquiry form</span>
+      <h2 class="h2">Two minutes now, a free layout next week.</h2>
+      <p>Tell us your seat count, your space and when you want to move in. We call you within a working day, walk the space with you, then send two layout options, a 3D view and quotes from our partner factories, at no cost.</p>
+      <p>Brokers and building managers are welcome to refer tenants through the same form.</p>
       <p class="basket" id="basket">No catalogue items added yet.</p>
+      <div><a class="pill light" id="enquiryLink" href="enquiry.html">Fill the enquiry form</a></div>
     </div>
-    <form id="form" novalidate>
-      <label>Name<input id="f-name" required autocomplete="name"></label>
-      <label>Company<input id="f-co" autocomplete="organization"></label>
-      <label>Phone or email<input id="f-contact" required></label>
-      <label>You are a
-        <select id="f-role"><option>Tenant or company</option><option>Broker</option><option>Building or facility manager</option><option>Co-working operator</option></select>
-      </label>
-      <label>Seats<input id="f-seats" inputmode="numeric" placeholder="50"></label>
-      <label>Location
-        <select id="f-loc"><option>Hinjewadi</option><option>Kharadi</option><option>Magarpatta or Hadapsar</option><option>Elsewhere in Pune</option></select>
-      </label>
-      <label class="full">Move-in date and notes<textarea id="f-notes" rows="3"></textarea></label>
-      <button class="pill light" type="submit">Book a site visit</button>
-      <p id="sent" hidden></p>
-    </form>
+    <ol class="asks" aria-label="What the form asks">
+      <li><b>01</b><div><h3>About you</h3><p>Your name, company and a phone number or email.</p></div></li>
+      <li><b>02</b><div><h3>Your space</h3><p>Where it is, roughly how big, and whether you have a floor plan.</p></div></li>
+      <li><b>03</b><div><h3>Your team</h3><p>How many seats, cabins and meeting rooms, and when you want to move in.</p></div></li>
+      <li><b>04</b><div><h3>Anything else</h3><p>A budget range if you have one, and anything you picked from our catalogue.</p></div></li>
+    </ol>
   </div>
 </section>
 
@@ -228,6 +220,7 @@ document.getElementById('catGrid').addEventListener('click', e=>{
 });
 function renderBasket(){
   document.getElementById('basket').textContent = picked.size ? `In your enquiry: ${[...picked].map(i=>items[i].n).join(', ')}.` : 'No catalogue items added yet.';
+  document.getElementById('enquiryLink').href = picked.size ? 'enquiry.html?items=' + [...picked].map(i=>items[i].s).join(',') : 'enquiry.html';
 }
 // A product page's "Request a quote" link arrives as ?item=<slug>: add it to the enquiry.
 try{const q=new URLSearchParams(location.search).get('item');const k=items.findIndex(x=>x.s===q);if(k>=0)picked.add(k);}catch(_){}
@@ -247,14 +240,6 @@ document.querySelectorAll('[data-view],[data-go]').forEach(b=>b.addEventListener
 }));
 show((location.hash||'').slice(1));
 
-// Enquiry form: not connected to email yet
-document.getElementById('form').addEventListener('submit', e=>{
-  e.preventDefault();
-  const name=document.getElementById('f-name').value.trim(), contact=document.getElementById('f-contact').value.trim();
-  const out=document.getElementById('sent'); out.hidden=false;
-  out.textContent = (!name||!contact) ? 'Please add your name and a phone number or email so we can reply.'
-    : `Thank you, ${name}. We will be in touch within a working day once online booking opens. It is not connected yet.`;
-});
 </script>
 </body>
 </html>
