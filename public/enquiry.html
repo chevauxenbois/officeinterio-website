@@ -129,8 +129,8 @@
       </fieldset>
 
       <div class="submit-row">
-        <button class="pill" type="submit">Send enquiry</button>
-        <p>We use your details only to reply to this enquiry. We do not share them.</p>
+        <button class="pill" type="submit">Send on WhatsApp</button>
+        <p>Your answers open in WhatsApp, ready to send to us. We use your details only to reply to this enquiry and do not share them.</p>
       </div>
       <p id="enq-msg" role="status" hidden></p>
     </form>
@@ -170,12 +170,15 @@ form.addEventListener('submit', e => {
   if (slugs.length) lines.push('Catalogue items: ' + slugs.map(nice).join(', '));
   const text = 'New enquiry from the Office Interio website\n\n' + lines.join('\n');
   const S = (typeof SITE !== 'undefined') ? SITE : {};
-  if (S.email) {
-    location.href = 'mailto:' + S.email + '?subject=' + encodeURIComponent('Office enquiry: ' + v('e-name') + ', ' + v('e-seats') + ' seats') + '&body=' + encodeURIComponent(text);
+  const mail = S.email ? 'mailto:' + S.email + '?subject=' + encodeURIComponent('Office enquiry: ' + v('e-name') + ', ' + v('e-seats') + ' seats') + '&body=' + encodeURIComponent(text) : '';
+  if (S.whatsapp) {
+    const wa = 'https://wa.me/' + S.whatsapp.replace(/\D/g,'') + '?text=' + encodeURIComponent(text);
+    const w = window.open(wa, '_blank');
+    if (w) w.opener = null; else location.href = wa;
+    msg.innerHTML = 'Thank you, ' + v('e-name').replace(/[<>&"]/g,'') + '. WhatsApp should open with your enquiry filled in. Press send and we will reply within a working day.' + (mail ? ' No WhatsApp? <a href="' + mail.replace(/"/g,'%22') + '">Send it by email instead</a>.' : '');
+  } else if (mail) {
+    location.href = mail;
     msg.textContent = 'Thank you, ' + v('e-name') + '. Your email app should open with your enquiry filled in. Press send and we will reply within a working day.';
-  } else if (S.whatsapp) {
-    window.open('https://wa.me/' + S.whatsapp.replace(/\D/g,'') + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
-    msg.textContent = 'Thank you, ' + v('e-name') + '. WhatsApp should open with your enquiry filled in. Press send and we will reply within a working day.';
   } else {
     msg.textContent = 'Thank you, ' + v('e-name') + '. Online enquiries are not connected yet, so this was not sent. Please check back soon.';
   }
